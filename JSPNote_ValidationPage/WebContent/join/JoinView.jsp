@@ -17,9 +17,9 @@
 	
 	function selectAllMarketFnc(){
 		   if(document.getElementById("allMarketingTerms").checked==true){  //id 를 사용하여 하나의 객체만을 호출
-		         for(var i=0;i<4;i++) document.getElementsByName("terms")[i].checked=true;   //name 을 사용하여 배열 형태로 담아 호출
+		         for(var i=0;i<4;i++) document.getElementsByName("MarketTerms")[i].checked=true;   //name 을 사용하여 배열 형태로 담아 호출
 		      } else if(document.getElementById("allMarketingTerms").checked==false){
-		         for(var i=0;i<4;i++) document.getElementsByName("terms")[i].checked=false;  
+		         for(var i=0;i<4;i++) document.getElementsByName("MarketTerms")[i].checked=false;  
 		      }
 		}
 </script>
@@ -183,19 +183,15 @@
 <!-- 					내용보기 -->
 						<button class="termsHide">내용보기</button>
 						<br>
-							<input type="checkbox" id="marketingCheckBoxAgreesms" name="terms">
-							<label for="marketingCheckBoxAgreesms">SMS</label>
-							<input type="checkbox" id="marketingCheckBoxAgreesms" name="terms">
-							<label for="marketingCheckBoxAgreesms">SMS</label>
 					</div>
 <!-- 					이메일 sms 선택div -->
 					<div class="termsMarketing">
 						<div class="termsMarketing">
-							<input type="checkbox" id="marketingCheckBoxAgreemailing" name="terms">
+							<input type="checkbox" id="marketingCheckBoxAgreemailing" name="MarketTerms">
 							<label for="marketingCheckBoxAgreemailing">이메일</label>
 						</div>
 						<div class="termsMarketing">
-							<input type="checkbox" id="marketingCheckBoxAgreesms" name="terms">
+							<input type="checkbox" id="marketingCheckBoxAgreesms" name="MarketTerms">
 							<label for="marketingCheckBoxAgreesms">SMS</label>
 						</div>
 					</div>

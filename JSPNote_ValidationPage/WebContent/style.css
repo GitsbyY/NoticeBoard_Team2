@@ -238,3 +238,7 @@
 	    border-radius: 4px;
 	}
 	
+	.termsCheckbox input[type=checkbox] + label > span {
+	    color: blue;
+	    font-weight: normal;
+	}

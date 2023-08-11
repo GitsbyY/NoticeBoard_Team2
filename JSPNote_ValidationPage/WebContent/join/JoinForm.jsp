@@ -5,12 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <link href="../style.css" rel="stylesheet" type="text/css">
-<title>JoinView</title>
+<title>회원가입</title>
 
+<style>
+/* 	.allTerms { */
+/* 	border-color: blue; */
+/* 	} */
+	
+</style>
+
+<script type="text/javascript">
+
+	
+
+</script>
 
 </head>
+<jsp:include page="/Header.jsp"/>
 <body>
-
+	
 	<div id="dnawaUserJoinBackGround"
 		class="dnawaUserJoinBackGroundClass">
 	
@@ -72,11 +85,11 @@
 						<br/> 
 						<input type='checkbox' name='terms' value='useService' /> 
 						<label>서비스 이용 약관 <strong>(필수)</strong></label>
-						<button class="termsHide" onclick="shapeChangeFnc()">내용보기</button>
+						<button type="button" class="termsHide" onclick="shapeChangeFnc()">내용보기</button>
 						<br/> 
 						<input type='checkbox' name='terms' value='privateInfoCollect' />
 						<label>개인정보 수집 및 이용 <strong>(필수)</strong></label>
-						<button class="termsHide">내용보기</button>
+						<button type="button" class="termsHide">내용보기</button>
 					</div>
 								
 		<!-- 			인풋 안에 버튼을 넣기 위해서는 CSS가 필요하다 -->
@@ -85,9 +98,14 @@
 			<!-- 		아이디div		 -->
 						<div class="joinId">
 							<label for="UserJoinId">아이디</label>
-			 				<input type="text" class="inputUser" id="UserJoinId" 
-			 					name="UserId" placeholder="영문 4자 이상, 최대 20자"> 
-							<button class="btnDel"><span class="delIcon"></span></button> 
+							<div class="inputWithButton">
+								
+				 				<input type="text" class="inputUser" id="UserJoinId"
+				 					name="UserId" placeholder="영문 4자 이상, 최대 20자"> 
+								<button type="button" class="btnDel" onClick="clearInput('UserJoinId')">
+	<!-- 								<img class="btnDel" alt="deleteB" src="../img/delete.jpg"> -->
+								</button>
+							</div>	 
 						</div>
 						
 						<div class="txtErrorArea" style=""> 
@@ -95,22 +113,30 @@
 			 			</div> 
 			<!-- 		비밀번호div		 -->
 						<div class="joinPwd">
-							<label for="UserJoinPwd">비밀번호</label>
-							<input type="password" class="inputUser" id="UserJoinPwd" 
-			 					name="UserId" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상">
-			 				<button class="btnDel"><span class="delIcon"></span></button>	
+							
+							<div class="inputWithButton">
+								<label for="UserJoinPwd">비밀번호</label>
+								<input type="password" class="inputUser" id="UserJoinPwd" 
+				 					name="UserId" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상">
+				 				<button type="button" class="btnDel" onClick="clearInput('UserJoinPwd')"></button>	
+							</div>
 						</div>
 						
 						<div class="txtErrorArea" style="">
-							<p class="errTxtRed" id="UserJoinMessagePwd" aria-live="assertive"></p>
+							<p class="errTxtRed" id="UserJoinMessagePwd" 
+								aria-live="assertive"></p>
 						</div>
 			<!-- 		비밀번호확인div		 -->
 						<div class="joinPwdConfirm">
-							<label for="UserJoinPwdConfim">비밀번호 확인</label>
-							<input class="inputUser" type="password" 
-								name="UserPwdConfirm" id="UserJoinPwdConfim" 
-								placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상">
-							<button class="btnDel"><span class="delIcon"></span></button>	
+							
+							<div class="inputWithButton">
+								<label for="UserJoinPwdConfim">비밀번호 확인</label>
+								<input class="inputUser" type="password" 
+									name="UserPwdConfirm" id="UserJoinPwdConfim" 
+										placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상">
+								<button type="button" class="btnDel" 
+									onClick="clearInput('UserJoinPwdConfim')"></button>	
+			 				</div>
 			 			</div>
 						
 						<div class="txtErrorArea" style="">
@@ -118,10 +144,14 @@
 						</div>
 			<!-- 		이메일div		 -->
 						<div class="joinEmail">
-							<label for="UserJoinEmail">이메일 주소</label>
-							<input class="inputUser" type="text" name="email" 
-								id="UserJoinEmail" placeholder="이메일 주소 입력">
-							<button class="btnDel"><span class="delIcon"></span></button>
+							
+							<div class="inputWithButton">
+								<label for="UserJoinEmail">이메일 주소</label>
+								<input class="inputUser" type="text" name="email" 
+									id="UserJoinEmail" placeholder="이메일 주소 입력">
+								<button type="button" class="btnDel" 
+									onClick="clearInput('UserJoinEmail')"></button>
+							</div>
 							<p>가입 완료를 위한 이메일 인증이 진행되니 정확한 이메일 주소를 입력해주시기 바랍니다.</p>
 						</div>
 						
@@ -130,10 +160,14 @@
 						</div>
 			<!-- 		이름div		 -->
 						<div class="joinUserName">
-							<label for="UserJoinUserName">이름</label>
-							<input class="inputUser" type="text" name="userName" 
-								id="UserJoinUserName" placeholder="이름 입력">
-							<button class="btnDel"><span class="delIcon"></span></button>
+							
+							<div class="inputWithButton">
+								<label for="UserJoinUserName">이름</label>
+								<input class="inputUser" type="text" name="userName" 
+									id="UserJoinUserName" placeholder="이름 입력">
+								<button type="button" class="btnDel" 
+									onClick="clearInput('UserJoinUserName')"></button>
+							</div>
 						</div>
 						
 						<div class="txtErrorArea" style="">
@@ -141,11 +175,15 @@
 						</div>
 			<!-- 		휴대폰번호div		 -->
 						<div class="joinPhoneNum">
-							<label for="UserPhoneNum">휴대폰 번호</label>
-							<input class="inputUser" type="text" name="phoneNum" 
-								id="UserPhoneNum" placeholder="휴대폰 번호 입력">
-							<button class="btnDel"><span class="delIcon"></span></button>
-							<button class="phoneNumVerify">본인인증</button>
+							
+							<div class="inputWithButton">
+								<label for="UserPhoneNum">휴대폰 번호</label>
+								<input class="inputUser" type="text" name="phoneNum" 
+									id="UserPhoneNum" placeholder="휴대폰 번호 입력">
+								<button type="button" class="btnDel" 
+									onClick="clearInput('UserPhoneNum')"></button>
+							</div>
+								<button type="button" class="phoneNumVerify">본인인증</button>
 						</div>
 						
 						<div class="txtErrorArea" style="">
@@ -156,7 +194,7 @@
 						<div class="joinVerifiedUser">
 							<div class="joinPhoneNumVerifiedNum" 
 								id="joinUserPhoneNumVerifiedNum">
-								<label for="UserPhoneNumVerifiedNum">인증번호</label>
+								<label for="UserPhoneNumVerifiedNum">인증된 번호</label>
 								<input class="inputUser" type="text" name="userName" 
 									id="UserPhoneNumVerifiedNum" disabled/>
 							</div>
@@ -172,10 +210,14 @@
 						</div>
 			<!-- 		닉네임div		 -->
 						<div class="joinNickname">
-							<label for="joinUserNickname">닉네임</label>
-							<input class="inputUser" type="text" name="nickname" 
-								id="joinUsernickname" placeholder="한글 8자, 영문 16자 까지 가능">
-							<button class="btnDel"><span class="delIcon"></span></button>
+							
+							<div class="inputWithButton">
+								<label for="joinUserNickname">닉네임</label>
+								<input class="inputUser" type="text" name="nickname" 
+									id="joinUsernickname" placeholder="한글 8자, 영문 16자 까지 가능">
+								<button type="button" class="btnDel" 
+									onClick="clearInput('joinUsernickname')"></button>
+							</div>
 						</div>
 						
 						<div class="txt_error_area" style="">
@@ -210,7 +252,7 @@
 									마케팅 활용 및 광고성 정보 수신 동의<span>(선택)</span>
 								</label>
 		<!-- 					내용보기 -->
-								<button class="termsHide">내용보기</button>
+								<button type="button" class="termsHide">내용보기</button>
 								<br>
 							</div>
 		<!-- 					이메일 sms 선택div -->
@@ -227,7 +269,7 @@
 								</div>
 							</div>
 							<!-- 		회원가입button		 -->	
-							<button id="danawaUserJoinIn" class="buttonJoin" disabled="disabled">회원가입</button>
+							<button type="button" id="danawaUserJoinIn" class="buttonJoin" disabled="disabled">회원가입</button>
 						</div>
 				</div>
 			</form>
@@ -235,10 +277,17 @@
 		</div>
 	
 	</div>
+	
+
+	
 </body>
 
 <script type="text/javascript">
 
+	function clearInput(inputId) {
+    document.getElementById(inputId).value = ""; // Clear the input field
+	}
+	
 	function selectAllFnc(){
 		   if(document.getElementById("allTerms").checked==true){  //id 를 사용하여 하나의 객체만을 호출
 		         for(var i=0;i<4;i++) document.getElementsByName("terms")[i].checked=true;   //name 을 사용하여 배열 형태로 담아 호출
@@ -254,6 +303,30 @@
 		         for(var i=0;i<4;i++) document.getElementsByName("MarketTerms")[i].checked=false;  
 		      }
 		}
+	
+// 	function idValidation() {
+
+// 	    var userId = document.getElementById("UserJoinId"); // Get the input element for 아이디
+// 	    var userIdValue = userId.value.trim(); // Trim the value to remove leading/trailing spaces
+
+// 	    var errorMessageId = document.getElementById("UserJoinMessageId"); // Get the error message element
+		
+// 	 	// Add an event listener to the input element
+// 		userId.addEventListener("input", validateUserId);
+	    
+// 	    // Check if 아이디 is empty
+// 	    if (userIdValue === "") {
+// 	        errorMessageId.textContent = "아이디를 입력하세요.";
+// 	        userId.focus();
+// 	        return false;
+// 	    }
+	    // Additional validation rules for 아이디 can be added here
+// 	    // If all checks pass, you can submit the form
+// 	    errorMessageId.textContent = ""; // Clear the error message
+// 	    document.formInfo.submit();
+// 	}
+
+
 </script>
 
 </html>

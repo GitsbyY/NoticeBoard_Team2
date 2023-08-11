@@ -26,10 +26,13 @@
     	display: block;
     }
     
+    .inputUser:focus{
+    	outline : 2px solid #0000ff;
+    }
 	.dnawaUserJoinBackGroundClass {
 	    width : 793px;
 	    height : 913px;
-	    background-color: #f5f5f5;
+	    background-color: #c0c0c0;
 	    color : #666666;
 	    font-family: "Malgun Gothic", "Apple SD Gothic Neo";
 	    margin: auto;
@@ -149,9 +152,13 @@
  	.termsWrap button { 
  		margin-left : 3px;
  		background: #fff; 
- 		border: none;
+ 		border: 1px solid black;
  		color: #919191;
  	} 
+ 	
+ 	.termsHide button{
+ 		float: right;
+ 	}
 	
 	.inputUser {
     	position: relative;
@@ -164,19 +171,37 @@
 		height: inherit;
 	}
 	
-	.btnDel {
-	  	position: absolute;
-		top: 0;
-		right: 0;
-		width: 30px;
-		height: inherit;
-		background: url(../img/delete.jpg) center center no-repeat;
-		background-size: 50%;
-		border: none;
-		outline: none;
-		cursor: pointer;
+	.inputWithLabel {
+	    display: flex;
+	    align-items: center;
+	    position: relative; /* For positioning the button */
+	
 	}
 	
+	.inputWithLabel label {
+	    flex-shrink: 0; /* Prevent label from shrinking */
+	    padding-right: 10px; /* Add spacing between label and input */
+	}
+	
+	.inputWithLabel .inputUser {
+	    flex: 1; /* Expand input to take remaining space */
+	    padding-right: 30px; /* Adjust padding to accommodate the button */
+	    box-sizing: border-box; /* Include padding in total width */
+	}
+	
+	.inputWithLabel .btnDel {
+	    position: absolute;
+	    right: 5px;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    border: none;
+	    background-color: transparent;
+	    background: url('./img/delete.jpg') no-repeat;
+	    background-size: 20px 20px;
+	    width: 20px;
+	    height: 20px;
+	    cursor: pointer;
+	}
 	.joinWrap{
 		position: relative;
 	    padding-top: 30px;
@@ -237,7 +262,10 @@
 	    margin-top: 24px;
 	    border-radius: 4px;
 	}
-	
+	.termsHide button{
+		position: absolute;
+		right: 0;
+	}
 	.termsCheckbox input[type=checkbox] + label > span {
 	    color: blue;
 	    font-weight: normal;

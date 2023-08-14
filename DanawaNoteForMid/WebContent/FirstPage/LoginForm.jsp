@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>(최종)다나와 홈페이지</title>
+<title>(거의 완성)다나와 홈페이지</title>
 
 <script type="text/javascript">
 	function loginScreenFnc() { // 이미지 클릭하면 로그인 화면으로 이동
-		window.open("loginForm.jsp","_self");		
+		window.open("LoginForm.jsp","_self");		
 	}
-	function moveLoginFnc() { // 로그인 버튼
-	
-	}
+// 	function moveloginfnc() { // 로그인 버튼
+// 		window.open("","_self");
+// 	}
 	function findLogFormFnc() { // 아이디 찾기 
 		window.open("findLogin.jsp","_self");
 	}
@@ -26,7 +26,7 @@
 		window.open("partnerManager.jsp","_self");		
 	} 
 	function generalMembershipFnc() { // 일반 회원가입
-		window.open("loginForm.jsp","_self");		
+		window.open("LoginForm.jsp","_self");		
 	}
 </script>
 <style>
@@ -43,17 +43,7 @@ body{
 	height:930px;
 	background-color:#ffffff;
 	margin:0 auto;
-	text-align: center;
-}
-#header {
-	padding:16px;
-	margin-top:20px;
-}
-.danawaImg{ /*다나와 이미지 */
-	float:left;	
-	width:128px;
-	height:28px;
-	margin-left:70px;
+/* 	text-align: center; */
 }
 .notLogin{
 	border:1px solid gray;
@@ -64,9 +54,9 @@ body{
 }
 #checkboxLogin { /* 체크박스 */
 	padding-top:62px;
-	
-	  
+	text-align:center;
 }
+
 .logMaintain {
 	text-align: center;
 	margin-left:30px;
@@ -81,7 +71,10 @@ body{
 	margin-left: 70px;
 	padding: 10px 80px 10px 21px;
 }
-
+.logMaintain{
+	margin-left:3px;
+	margin-right:39px;
+}
 #findLog { /* 찾기 */
 	padding: 10px;
 	text-align:center;
@@ -94,9 +87,6 @@ a{ /* 아이디 찾기 ,비번 찾기,회원가입 */
 #fontSize{ /* 이미지 아래 폰트 사이즈 */
 	font-size: 13px;
  	margin-left:80px; 
-}
-.logMaintain{
-	text-align:left;
 }
 #boxSize1{
 	text-align:center;
@@ -126,7 +116,7 @@ a{ /* 아이디 찾기 ,비번 찾기,회원가입 */
 	border-radius:30px;
 }
 .input_wrap1 input{
-	width:380px;
+	width:440px;
 	height:29px;
 	margin:5px;
 }
@@ -134,12 +124,12 @@ input:focus{
 	outline: 1px solid blue;
 }
 .input_wrap2 input{
-	width:380px;
+	width:440px;
 	height:29px;
 	margin:5px;
 }
 .input_wrap3 input{
-	width:400px;
+	width:462px;
 	height:50px;
 	margin:5px;
 	background-color:#2070eb;
@@ -164,7 +154,7 @@ input:focus{
 
 <body>
 	<div id="bodyEntire"> <!-- body 전체 -->
-	<jsp:include page="./Header.jsp"/>
+	<jsp:include page="../Header.jsp"/>
 		<div>
 			<span><a href="https://www.naver.com/" class="notLogin">
 				비로그인 주문조회
@@ -173,8 +163,8 @@ input:focus{
 		<!-- 선택란 -->
 		
 		<div id="checkboxLogin">
-			<label>
-				<input type="checkbox" value="" class="logMaintain">로그인 상태 유지
+			<label class="logMaintain">
+				<input type="checkbox" value="">로그인 상태 유지
 			</label>
 			<label class="members">				
 				<input type="radio" value="" onclick="generalMembershipFnc()">일반회원
@@ -208,22 +198,22 @@ input:focus{
 			<!-- 이미지 4개   -->
 		<div id="fontSize">
 			<div id="boxSize1">
-				<span><img alt="네이버" src="./images/naver.jpg"
+				<span><img alt="네이버" src="../img/naverlogo.jpg"
 					style="width: 68px; height: 68px;">
 				<br>네이버</span>
 			</div>
 			<div id="boxSize2">
-				<span><img alt="카카오" src="./images/kakao.jpg"
+				<span><img alt="카카오" src="../img/kakaologo.jpg"
 					style="width: 68px; height: 68px;">
 				<br>카카오 로그인</span>
 			</div>
 			<div id="boxSize3">
-				<span><img alt="페이스북" src="./images/facebook.png"
+				<span><img alt="페이스북" src="../img/facebook.png"
 					style="width: 68px; height: 68px;">
 				<br>페이스북 로그인</span>
 			</div>
 			<div id="boxSize4">
-				<span><img alt="구글" src="./images/enuri.jpg"
+				<span><img alt="구글" src="../img/enurilogo.jpg"
 					style="width: 68px; height: 68px;">
 				<br>에누리 로그인</span>
 			</div>
@@ -231,19 +221,14 @@ input:focus{
 			<div id="bannerEvent">
 				<a href="https://www.google.com/webhp?hl=ko&sa=X
 				&ved=0ahUKEwiHrv-gkdGAAxXJ-zgGHefDBK0QPAgI">
-				<img alt="광고 배너" src="./images/banner.png" 
+				<img alt="광고 배너" src="../img/banner.png" 
 					style="width:400px; height:80px; margin:14px;" onclick="">
 				</a>	
 			</div>
 		</div>
 			<!-- footer -->
-			<footer>
-				<div id="tailExplan">
-					<p>Copyright ©
-					<strong>connectwave</strong> Co., Ltd. All Rights Reserved.</p>
-				</div>
-			</footer>
-		</div>
+			<jsp:include page="../Tail.jsp" />
+		</div><!-- bodyEntire -->
 </body>
 
 

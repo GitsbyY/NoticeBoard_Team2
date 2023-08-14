@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import spms.dao.MemberDao;
 import spms.dto.MemberDto;
-import spms.dto.UserDto;
+
 
 @WebServlet("/user/join")
 public class UserJoinServlet extends HttpServlet{

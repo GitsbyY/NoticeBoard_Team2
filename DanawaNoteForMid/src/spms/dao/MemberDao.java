@@ -25,7 +25,7 @@ public class MemberDao {
 		try {
 			String sql = "SELECT USER_NO, USER_NAME, USER_EMAIL, USER_CRE_DATE";
 			sql += " FROM USER_INFO";
-			sql += " ORDER BY USER_NO DESC";
+//			sql += " ORDER BY USER_NO DESC";
 			
 			pstmt = connection.prepareStatement(sql);
 			

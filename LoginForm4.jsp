@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>(최종)다나와 홈페이지</title>
+<title>(거의 완성)다나와 홈페이지</title>
 
 <script type="text/javascript">
 	function loginScreenFnc() { // 이미지 클릭하면 로그인 화면으로 이동
-		window.open("loginForm.jsp","_self");		
+		window.open("LoginForm4.jsp","_self");		
 	}
-	function moveLoginFnc() { // 로그인 버튼
-	
-	}
+// 	function moveloginfnc() { // 로그인 버튼
+// 		window.open("","_self");
+// 	}
 	function findLogFormFnc() { // 아이디 찾기 
 		window.open("findLogin.jsp","_self");
 	}
@@ -26,7 +26,7 @@
 		window.open("partnerManager.jsp","_self");		
 	} 
 	function generalMembershipFnc() { // 일반 회원가입
-		window.open("loginForm4.jsp","_self");		
+		window.open("LoginForm4.jsp","_self");		
 	}
 </script>
 <style>
@@ -70,7 +70,10 @@ body{
 	margin-left: 70px;
 	padding: 10px 80px 10px 21px;
 }
-
+.logMaintain{
+	margin-left:3px;
+	margin-right:39px;
+}
 #findLog { /* 찾기 */
 	padding: 10px;
 	text-align:center;
@@ -83,9 +86,6 @@ a{ /* 아이디 찾기 ,비번 찾기,회원가입 */
 #fontSize{ /* 이미지 아래 폰트 사이즈 */
 	font-size: 13px;
  	margin-left:80px; 
-}
-.logMaintain{
-	text-align:left;
 }
 #boxSize1{
 	text-align:center;
@@ -115,7 +115,7 @@ a{ /* 아이디 찾기 ,비번 찾기,회원가입 */
 	border-radius:30px;
 }
 .input_wrap1 input{
-	width:380px;
+	width:440px;
 	height:29px;
 	margin:5px;
 }
@@ -123,12 +123,12 @@ input:focus{
 	outline: 1px solid blue;
 }
 .input_wrap2 input{
-	width:380px;
+	width:440px;
 	height:29px;
 	margin:5px;
 }
 .input_wrap3 input{
-	width:400px;
+	width:462px;
 	height:50px;
 	margin:5px;
 	background-color:#2070eb;
@@ -162,8 +162,8 @@ input:focus{
 		<!-- 선택란 -->
 		
 		<div id="checkboxLogin">
-			<label>
-				<input type="checkbox" value="" class="logMaintain">로그인 상태 유지
+			<label class="logMaintain">
+				<input type="checkbox" value="">로그인 상태 유지
 			</label>
 			<label class="members">				
 				<input type="radio" value="" onclick="generalMembershipFnc()">일반회원
@@ -227,7 +227,7 @@ input:focus{
 		</div>
 			<!-- footer -->
 			<jsp:include page="./Tail.jsp" />
-		</div>
+		</div><!-- bodyEntire -->
 </body>
 
 

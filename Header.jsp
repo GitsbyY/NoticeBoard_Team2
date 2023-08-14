@@ -7,7 +7,7 @@
 <title>헤더</title>
 <script type="text/javascript">
 	function loginHomeFnc() {
-		window.open("loginForm4.jsp","_self");
+		window.open("LoginForm4.jsp","_self");
 	}
 </script>
 <style>
@@ -24,8 +24,8 @@
 		width: 128px;
 		height: 28px;
 		float:left;
-		margin-top:20px;
 		cursor: pointer;
+/* 		margin-top:20px; <- 이거 뺴야됨*/
 	}
 </style>
 </head>

@@ -4,7 +4,7 @@
 <html>
 <head>
    <meta charset="UTF-8">
-   <title>비밀번호 찾기(버튼 border만)</title>
+   <title>비밀번호 찾기(거의 완성)</title>
    <script type="text/javascript">
    function find_searchPwdFnc() { // 비밀번호 찾기
 		window.open("findPassword.jsp", "_self");
@@ -29,7 +29,7 @@ body{
 }
 .search_wrap{
     width: 440px;
-    padding-top: 100px;
+    padding-top: 50px;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -41,6 +41,7 @@ body{
  	width:200px;
  	text-align:center;
  	color:gray;
+ 	background-color:#ffffff;
 }     
 .find_searchPwd { /*  비밀번호 찾기 */
 	border-bottom:1px solid #2027eb;
@@ -49,34 +50,30 @@ body{
 	cursor: pointer;
  	width:200px;
  	text-align:center;
- 	color:#2027eb;
+ 	color:#3263EB;
+ 	background-color:#ffffff;
 }  
- .userInfo_searchBar{
+.certified{
+	 letter-spacing: -.02em; /* 글자 사이 간격*/
+	 margin-left:5px;
+}
+ .userInfo_searchBar{ /* 이메일 주소 입력 */
  	width:400px;
- 	height:36px;
+ 	height:45px;
  	border:1px solid gray;
  	border-radius: 4px;
  	margin:10px;
  }
- .search_button{
+ .search_button{ /* 확인 버튼*/
     text-align: center;
     width: 400px;
-    height: 36px;
+    height: 45px;
     border-radius: 4px;
-    background-color: #2027eb;
+    background-color: #3263EB;
     color:white;
+    border:0;
     
  }
-#tailExplan {
-	font-size: 9px;
- 	width: 430px; 
- 	height: 110px; 
- 	text-align: center; 
- 	margin-left: 84px; 
- 	margin-top: 50px; 
-	position:absolute;
-	bottom:0;
-}	
 </style>
 </head>
 
@@ -95,7 +92,7 @@ body{
 					</button>
 				</div>
 				<div id="explan_certified">
-					<h3>다나와 아이디 또는 인증 이메일을 입력해 주세요.</h3>
+					<h3 class="certified">다나와 아이디 또는 인증 이메일을 입력해 주세요.</h3>
 
 					<input class="userInfo_searchBar" type="text" placeholder="다나와 아이디 또는 이메일 주소 입력">
 					<button class="search_button">

@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>(최종)다나와 홈페이지 : 협력사 로그인</title>
+<title>(거의 완성)다나와 홈페이지 : 협력사 로그인</title>
 
 <script type="text/javascript">
 	function partnerManagerFnc() { // 협력 관리자 가입
 		window.open("partnerManager.jsp", "_self");
 	}
 	function generalMembershipFnc() { // 일반 회원가입
-		window.open("loginForm4.jsp", "_self");
+		window.open("LoginForm4.jsp", "_self");
 	}
 </script>
 <style>
@@ -74,7 +74,8 @@ a { /* 아이디 찾기 ,비번 찾기,회원가입 */
 }
 
 .logMaintain {
-	text-align: left;
+	margin-left: 3px;
+	margin-right: 39px;
 }
 
 #loginForm {
@@ -85,19 +86,19 @@ a { /* 아이디 찾기 ,비번 찾기,회원가입 */
 }
 
 .input_wrap1 input {
-	width: 337px;
+	width: 440px;
 	height: 29px;
 	margin: 5px;
 }
 
 .input_wrap2 input {
-	width: 337px;
+	width: 440px;
 	height: 29px;
 	margin: 5px;
 }
 
 .input_wrap3 input {
-	width: 361px;
+	width: 462px;
 	height: 50px;
 	margin: 5px;
 	background-color: #2070eb;
@@ -136,9 +137,8 @@ a { /* 아이디 찾기 ,비번 찾기,회원가입 */
 		</div>
 		<!-- 선택란 -->
 		<div id="checkboxLogin">
-			<label> 
-			<input type="checkbox" value="" class="logMaintain">
-				로그인 상태 유지
+			<label class="logMaintain"> 
+				<input type="checkbox">로그인 상태 유지
 			</label> 
 			<label class="members"> 
 				<input type="radio" value=""
@@ -186,6 +186,7 @@ a { /* 아이디 찾기 ,비번 찾기,회원가입 */
 			</a>
 		</div>
 	</div> <!-- search_wrap -->
+	
 		<!-- footer -->
 		<jsp:include page="./Tail.jsp" />
 	</div> <!-- container -->

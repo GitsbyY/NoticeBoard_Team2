@@ -15,8 +15,8 @@
  	height: 110px; 
  	text-align: center; 
  	margin-left: 84px; 
- 	margin-top: 50px; 
-	position:absolute;
+ 	margin-top: 200px; 
+	position:relative;
 	bottom:0;
 }
 </style>

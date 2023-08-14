@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 찾기(버튼 border만)</title>
+<title>아이디 찾기(거의 완성)</title>
 <script type="text/javascript">
 	function find_searchPwdFnc() { // 비밀번호 찾기
 		window.open("findPassword.jsp", "_self");
@@ -31,7 +31,7 @@ body {
 
 .search_wrap {
 	width: 440px;
-	padding-top: 100px;
+	padding-top: 50px;
 	margin: 0 auto;
 	box-sizing: border-box;
 }
@@ -43,7 +43,8 @@ body {
 	cursor: pointer;
 	width: 200px;
 	text-align: center;
-	color: #2027eb;
+	color:#3263EB;
+	background-color:#ffffff; 
 }
 
 .find_searchPwd { /*  비밀번호 찾기 */
@@ -54,11 +55,12 @@ body {
 	width: 200px;
 	text-align: center;
 	color: gray;
+	background-color:#ffffff;
 }
 
 .userInfo_serachBar {
 	width: 400px;
-	height: 36px;
+	height: 45px;
 	border: 1px solid gray;
 	border-radius: 4px;
 	margin: 10px;
@@ -67,10 +69,12 @@ body {
 .search_button {
 	text-align: center;
 	width: 400px;
-	height: 36px;
+	height: 45px;
 	border-radius: 4px;
-	background-color: #2027eb;
+	background-color:#3263EB;
 	color: white;
+	outline-color:#3263EB;
+	border:0;
 }
 
 .forgetPhoneFind {
@@ -80,6 +84,16 @@ body {
 	background-color: #ffffff;
 	border-color: #2070eb;
 	margin: 5px;
+}
+
+.explan_certified { /* 내부정보 */
+	text-align: left;
+	margin-left: 18px;
+}
+
+.myInfo_certified { /* 내 정보에 등록된 인증 이메일로 찾기 */
+	text-align: left;
+	margin-left: 18px;
 }
 
 .ipinFind {
@@ -93,16 +107,18 @@ body {
 #insideInformation {
 	float: left;
 	position: sticky; /* 화면 고정 */
- 	margin-top: 20px; 
-	top:0;
+	margin-top: 20px;
+	top: 0;
 }
 </style>
 </head>
 
 <body>
 	<div id="bodyEntire">
+	<!-- header -->
 		<jsp:include page="./Header.jsp" />
-
+		
+	<!-- main -->
 		<div id="container">
 			<div class="search_wrap">
 				<div class="findSearchBar">
@@ -114,11 +130,11 @@ body {
 					</button>
 				</div>
 				<div class="explan_certified">
-					<p style="text-align: left;">
+					<p>
 						다나와 아이디를 모르시나요? <br>등록된 인증 수단으로 아이디를 찾을 수 있습니다.
 					</p>
 				</div>
-				<h3 style="text-align: left;">내 정보에 등록된 인증 이메일로 찾기</h3>
+				<h3 class="myInfo_certified">내 정보에 등록된 인증 이메일로 찾기</h3>
 				<div id="searchBar_email">
 					<input class="userInfo_serachBar" type="text"
 						placeholder="이메일 주소 입력" required>
@@ -127,9 +143,10 @@ body {
 					</button>
 				</div>
 				<div>
+					<!-- 내부정보 -->
 					<details id="insideInformation">
-						<summary class="info_search">
-							다른 방법으로 찾기
+						<summary class="info_search"> 
+							다른 방법으로 찾기 
 						</summary>
 
 						<p style="margin: 40px;">본인인증을 완료한 아이디만 가능합니다</p>
@@ -148,6 +165,8 @@ body {
 					</details>
 				</div> <!-- search_wrap -->
 			</div> <!-- container -->
+			
+			<!-- tail -->
 			<jsp:include page="./Tail.jsp" />
 		</div> <!-- bodyEntire -->
 	</div>

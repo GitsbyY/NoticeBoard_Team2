@@ -18,8 +18,8 @@ body {
 	width: 1903px;
 	height: 930px;
 	background-color: #f5f5f5;
-	float: center;
-	text-align: center;
+/* 	float: center; */
+/* 	text-align: center; */
 }
 
 #bodyEntire {
@@ -67,14 +67,14 @@ body {
 }
 
 .search_button {
-	text-align: center;
-	width: 400px;
-	height: 45px;
+	width: 407px;
+	height: 49px;
 	border-radius: 4px;
 	background-color:#3263EB;
 	color: white;
 	outline-color:#3263EB;
 	border:0;
+	margin-left:10px;
 }
 
 .forgetPhoneFind {
@@ -84,16 +84,17 @@ body {
 	background-color: #ffffff;
 	border-color: #2070eb;
 	margin: 5px;
+	margin-left: 13px;
 }
 
 .explan_certified { /* 내부정보 */
 	text-align: left;
-	margin-left: 18px;
+	margin-left: 9px;
 }
 
 .myInfo_certified { /* 내 정보에 등록된 인증 이메일로 찾기 */
 	text-align: left;
-	margin-left: 18px;
+	margin-left: 9px;
 }
 
 .ipinFind {
@@ -102,6 +103,7 @@ body {
 	color: #2070eb;
 	background-color: #ffffff;
 	border-color: #2070eb;
+	margin-left:13px;
 }
 
 #insideInformation {
@@ -116,7 +118,7 @@ body {
 <body>
 	<div id="bodyEntire">
 	<!-- header -->
-		<jsp:include page="./Header.jsp" />
+		<jsp:include page="../Header.jsp" />
 		
 	<!-- main -->
 		<div id="container">
@@ -149,25 +151,26 @@ body {
 							다른 방법으로 찾기 
 						</summary>
 
-						<p style="margin: 40px;">본인인증을 완료한 아이디만 가능합니다</p>
+						<p style="margin: 12px; font-size:12px;">본인인증을 완료한 아이디만 가능합니다</p>
 						<div>
 							<input class="forgetPhoneFind" type="button"
-								value="본인 명의 휴대폰으로 찾기" onclick="">
+								value="본인 명의 휴대폰으로 찾기">
 						</div>
 						<div>
-							<input class="ipinFind" type="button" value="아이핀으로 찾기" onclick="">
+							<input class="ipinFind" type="button" value="아이핀으로 찾기">
 						</div>
 						<p>혹시 개명하셨나요?</p>
 						<p>
-							나이스평가정보 <a href="http://www.niceinfo.co.kr/etc/qna.nice">고객센터</a>에서
-							개명신청 후 찾아보세요.
+							나이스평가정보
+						<a href="http://www.niceinfo.co.kr/etc/qna.nice">고객센터</a>
+							에서 개명신청 후 찾아보세요.
 						</p>
 					</details>
 				</div> <!-- search_wrap -->
 			</div> <!-- container -->
 			
 			<!-- tail -->
-			<jsp:include page="./Tail.jsp" />
+			<jsp:include page="../Tail.jsp" />
 		</div> <!-- bodyEntire -->
 	</div>
 </body>

@@ -16,23 +16,22 @@
 	 	width: 440px;
 	 	padding: 100px 0px 0px;
 	 	margin: 0px auto;
- 	 	position:relative;
+ 	 	position:relative; 
 	 	
 	/*  	margin-top:px;  */
 	 } 
 	.danawaImg{ /*다나와 이미지 */
 		width: 128px;
 		height: 28px;
-		float:left;
+/*  		float:left;  */
 		cursor: pointer;
-/* 		margin-top:20px; <- 이거 뺴야됨*/
 	}
 </style>
 </head>
 
 <body>
 		<div id="header" class="headerLogin">
-			<img alt="다나와 이미지" src="./images/danawa.jpg" class="danawaImg" onclick="loginHomeFnc()">
+			<img alt="다나와 이미지" src="../images/danawa.jpg" class="danawaImg" onclick="loginHomeFnc()">
 		</div>
 </body>
 

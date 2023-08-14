@@ -23,7 +23,7 @@ body {
 	width: 1903px;
 	height: 930;
 	background-color: #f5f5f5;
-	margin: auto;
+/* 	margin: auto; */
 }
 
 #bodyEntire {
@@ -31,7 +31,7 @@ body {
 	height: 930px;
 	background-color: #ffffff;
 	margin: 0 auto;
-	text-align: center;
+/* 	text-align: center; */
 }
 
 .notLogin {
@@ -127,7 +127,7 @@ a { /* 아이디 찾기 ,비번 찾기,회원가입 */
 <body>
 		<!-- body 전체 -->
 	<div id="bodyEntire">
-		<jsp:include page="./Header.jsp" />
+		<jsp:include page="../Header.jsp" />
 		
 		<div id="container">
 			<div class="search_wrap">
@@ -160,8 +160,7 @@ a { /* 아이디 찾기 ,비번 찾기,회원가입 */
 					style="padding: 10px">
 			</div>
 			<div class="input_wrap3">
-				<input type="submit" value="로그인" target="_blank;"
-					onclick="moveLoginFnc()">
+				<input type="submit" value="로그인" onclick="moveLoginFnc()">
 			</div>
 		</form>
 		<!-- 아이디,비번,회원가입 -->
@@ -188,7 +187,7 @@ a { /* 아이디 찾기 ,비번 찾기,회원가입 */
 	</div> <!-- search_wrap -->
 	
 		<!-- footer -->
-		<jsp:include page="./Tail.jsp" />
+		<jsp:include page="../Tail.jsp" />
 	</div> <!-- container -->
 </body>
 

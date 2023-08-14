@@ -20,8 +20,8 @@ body{
 	width:1903px;
 	height:930px;
 	background-color:#f5f5f5;
-	float: center;
-	text-align: center;
+/* 	float: center; */
+/* 	text-align: center; */
 }
 #bodyEntire {
 	width:600px;
@@ -68,7 +68,7 @@ body{
 
 <body>
    <div id="bodyEntire">
-   		<jsp:include page="./Header.jsp"/>
+   		<jsp:include page="../Header.jsp"/>
    		
 		<div id="container">
 			<div class="search_wrap">
@@ -82,7 +82,7 @@ body{
 					</button>
 				</div>
 			</div> <!-- id="search_wrap" -->
-		<jsp:include page="./Tail.jsp" />
+		<jsp:include page="../Tail.jsp" />
 		</div> <!-- id="container" -->
 		
 	</div>

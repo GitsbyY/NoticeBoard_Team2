@@ -18,8 +18,6 @@ body{
 	width:1903px;
 	height:930;
 	background-color:#f5f5f5;
-	float: center;
-	text-align: center;
 }
 #bodyEntire {
 	width:600px;
@@ -65,13 +63,13 @@ body{
  	margin:10px;
  }
  .search_button{ /* 확인 버튼*/
-    text-align: center;
-    width: 400px;
-    height: 45px;
+    width: 403px;
+    height: 49px;
     border-radius: 4px;
     background-color: #3263EB;
     color:white;
     border:0;
+    margin-left:10px;
     
  }
 </style>
@@ -79,15 +77,15 @@ body{
 
 <body>
    <div id="bodyEntire">
-   		<jsp:include page="./Header.jsp"/>
-   		
+   		<jsp:include page="../Header.jsp"/>
+	   		
 		<div id="container">
 			<div class="search_wrap">
 				<div class="findSearchBar"> <!--  id="findId1Btn"> -->
 					<button class="find_searchId" onclick="find_searchIdFnc()">
 						<h2>아이디 찾기</h2>
 					</button>
-					<button class="find_searchPwd" onclik="find_searchPwdFnc">
+					<button class="find_searchPwd" onclick="find_searchPwdFnc">
 						<h2>비밀번호 찾기</h2>
 					</button>
 				</div>
@@ -103,7 +101,7 @@ body{
 		</div> <!-- id="container" -->
 		
 		<footer>
-			<jsp:include page="./Tail.jsp" />
+			<jsp:include page="../Tail.jsp" />
 		</footer>
 	</div>
 </body>

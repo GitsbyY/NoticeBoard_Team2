@@ -94,6 +94,7 @@
 <body>
 	<form action="./write" name="boardWrite" method="post">
 		<div id="wrap">
+		<jsp:include page='../Header.jsp'/>
 		
 		<div id="writeTitle">&nbsp;∷ 글쓰기 ∷</div>
 		
@@ -131,7 +132,9 @@
 			<a href="./list"><input type="button" value="목록" id="listBtn"></a>
 		</div>
 		
+		<jsp:include page='../Tail.jsp'/>
 		</div> <!-- wrap -->
+		
 	</form>
 </body>
 

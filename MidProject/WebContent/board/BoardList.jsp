@@ -55,6 +55,7 @@
 		width: 170px;
 	}
 	
+	
 </style>
 <script type="text/javascript">
 
@@ -62,7 +63,7 @@
 </head>
 
 <body>
-	<form action="./board" name="board" method="get">
+	<form action="./board" name="board" method="post">
 		<div id="wrap">
 		<jsp:include page='../Header.jsp'/>
 			<div class="topArea">전체게시글 : <%=request.getAttribute("totalContent")%></div>
@@ -79,7 +80,7 @@
 					<c:forEach var="memberDto" items="${boardList}">
 						<tr>
 							<td>${memberDto.postNo}</td>
-							<td><a href="./view?no=${memberDto.postNo}">${memberDto.postTitle}</a></td>
+							<td style="white-space: nowrap; text-overflow: ellipsis; max-width: 190px; overflow: hidden;"><a href="./view?no=${memberDto.postNo}">${memberDto.postTitle}</a></td>
 							<td>${memberDto.postWriter}</td>
 							<td>
 								<c:set var="now" value="${memberDto.postDate}" />
@@ -91,14 +92,14 @@
 					</c:forEach>
 				</table>
 			</div>
-
+			
 			<div class="pageNaviArea">
 				<table>
 					<tr>
 						<td>
 							<ul style="list-style: none;">
 								<a href="#"><li style="float: left;">&nbsp;◀</li></a>
-								<a href="#"><li style="float: left;">&nbsp;[1]</li></a>
+								<a href="#"><li style="float: left;">&nbsp;[<%=request.getAttribute("boardListNum")%>]</li></a>
 								<li style="float: left;">&nbsp;[2]</li>
 								<li style="float: left;">&nbsp;[3]</li>
 								<li style="float: left;">&nbsp;[4]</li>
@@ -113,6 +114,8 @@
 			<div class="postArea">
 				<a href="./write"><input type="button" value="글쓰기" name="write"></a>
 			</div>
+			
+		<jsp:include page='../Tail.jsp'/>
 		</div>
 	</form>
 </body>

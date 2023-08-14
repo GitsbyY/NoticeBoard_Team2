@@ -41,19 +41,21 @@
 
 <body>
 
-	<form action="">
+	<form action="./update" method="post">
 		<div id="wrap">
+		<jsp:include page='../Header.jsp'/>
 			<div id="titleArea">
 				제목
-				<input type="text" value="값 가져오기" name="title" id="title">
+				<input type="text" value="${boardDto.postTitle}" name="title" id="title">
 			</div>
 			<div id="textArea">
-				<textarea name="content" id="content"></textarea>
+				<textarea name="content" id="content">${boardDto.postContent}</textarea>
 			</div>
 			<div id="btnArea">
-				<input type="button" name="update" value="수정하기" id="update">
-				<input type="button" name="cancel" value="취소">
+				<input type="submit"value="수정하기" id="update">
+				<input type="button" value="취소" onclick="location.href='./view?no=${boardDto.postNo}'">
 			</div>
+		<jsp:include page='../Tail.jsp'/>
 		</div>
 	</form>
 	

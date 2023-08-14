@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>게시판 - ${boardList.postTitle}</title>
+	<title>게시판 - ${boardDto.postTitle}</title>
 	
 	<style type="text/css">
 		body {
@@ -24,7 +24,6 @@
 			height: 100px;
 			margin: auto;
 			font-size: 30px;
-			background-color: red;
 		}
 		
 		#addition {
@@ -50,23 +49,29 @@
 		
 	</style>
 	<script type="text/javascript">
-		
-		
+		function listGoFnc() {
+			location.href = "./list";
+		}
 	</script>
 </head>
 
 <body>
-	<form action="./view" name="boardWrite" method="get">
+	<form action="./view" name="boardWrite" method="post">
 		<div id="wrap">
+		<jsp:include page='../Header.jsp'/>
 			<div id="title">${boardDto.postTitle}</div>
 			<div id="addition">작성자 &nbsp;${boardDto.postWriter} | &nbsp;${boardDto.postDate} | &nbsp;조회수 &nbsp;${boardDto.postViewNo}</div>
 			<div id="content">
 				${boardDto.postContent}
 			</div>
 			<div id="btnArea">
-				<input type="button" value="수정하기" id="updateBtn" name="updateBtn">
-				<a href="./list"><input type="button" value="목록" id="cancelBtn"></a>
+<!-- 				<input type="submit" value="수정하기" id="updateBtn"> -->
+				<input name="no" value="${boardDto.postNo}" type="hidden">
+				<input type="submit" value="수정하기" id="updateBtn" name="updateBtn">
+<%-- 				<a href="./update?no=${boardDto.postNo}"><input type="button" value="수정하기" id="updateBtn" name="updateBtn"></a> --%>
+				<button type="button" id="cancelBtn" onclick="listGoFnc()">목록</button>
 			</div>
+		<jsp:include page='../Tail.jsp'/>
 		</div> <!-- wrap -->
 	</form>
 </body>

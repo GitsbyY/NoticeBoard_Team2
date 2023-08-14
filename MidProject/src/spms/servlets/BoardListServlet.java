@@ -37,9 +37,9 @@ public class BoardListServlet extends HttpServlet {
 			
 			req.setAttribute("boardList", boardList);
 			req.setAttribute("totalContent", boardDao.totalContent());
+//			req.setAttribute("boardListNum", boardDao.boardListNum());
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/board/BoardList.jsp");
-			
 			dispatcher.forward(req, res);
 			
 		} catch (Exception e) {

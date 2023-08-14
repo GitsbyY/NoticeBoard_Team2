@@ -26,14 +26,9 @@
     	display: block;
     }
     
-    .inputUser:focus{
-    	outline : 2px solid #0080ff;
-    }
-    
-    /* Add this to your CSS file */
-	.inputUser:blur {
-	    outline-color: red;
-	}
+/*     .inputUser:focus{ */
+/*     	outline : 2px solid #0080ff; */
+/*     } */
     
 	.dnawaUserJoinBackGroundClass {
 	    width : 793px;
@@ -156,15 +151,14 @@
 	    font-weight: normal;
 	}
  	.termsWrap button { 
- 		margin-left : 3px;
  		background: #fff; 
  		border: 1px solid black;
  		color: #919191;
+ 		position: relative;
+  		top: 28px;
+  		left: 300px;
  	} 
  	
- 	.termsHide button{
- 		float: right;
- 	}
 	
 	.inputUser {
     	position: relative;
@@ -173,7 +167,7 @@
  	}
 
 	.inputUser input {
-		padding-right: 30px;
+/* 		padding-right: 30px; */
 		height: inherit;
 	}
 	
@@ -220,7 +214,7 @@
 	    color: #333;
 	    display: block;
 	    width: 100%;
-	    padding-left: 16px;
+/* 	    padding-left: 16px; */
 	    height: 48px;
 	    line-height: 48px;
 	    box-sizing: border-box;
@@ -268,11 +262,24 @@
 	    margin-top: 24px;
 	    border-radius: 4px;
 	}
-	.termsHide button{
-		position: absolute;
-		right: 0;
-	}
+
 	.termsCheckbox input[type=checkbox] + label > span {
 	    color: blue;
 	    font-weight: normal;
 	}
+	
+/* 	-------------------invalidation CSS-------------------- */
+	.errorOutline {
+	    border: 1px solid red; 
+	}
+	.focusOutline {
+	   outline : 2px solid #0080ff; 
+	}
+	
+	
+	
+	
+	
+	
+	
+	

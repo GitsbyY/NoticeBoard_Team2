@@ -17,8 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 
-import spms.dao.UserDao;
-import spms.dto.UserDto;
+import spms.dao.MemberDao;
+import spms.dto.MemberDto;
+
 
 
 @WebServlet("/user/add")
@@ -48,23 +49,23 @@ public class UserAddServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		
 		try {
-			UserDto userDto = new UserDto();
+			MemberDto memberDto = new MemberDto();
 			
-			userDto.setEmail(email);
-			userDto.setPassword(pwd);
-			userDto.setName(name);
+			memberDto.setUserEmail(email);;
+			memberDto.setUserPwd(pwd);
+			memberDto.setUserName(name);
 			
 			ServletContext sc = this.getServletContext();
 			
 			conn = (Connection) sc.getAttribute("conn");
 			
-			UserDao userDao = new UserDao();
+			MemberDao memberDao = new MemberDao();
 			
-			userDao.setConnection(conn);
+			memberDao.setConnection(conn);
 			
 			int resultNum = 0;
 			
-			resultNum = userDao.userInsert(userDto);
+			resultNum = memberDao.MemberInsert(memberDto);
 			
 			res.sendRedirect("./list");
 

@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import spms.dto.UserDto;
+import spms.dto.MemberDto;
 
-public class UserDao {
+public class MemberDao {
 
 	private Connection connection;
 	
@@ -18,39 +18,39 @@ public class UserDao {
 		this.connection = conn;
 	}
 	
-	public List<UserDto> selectList() throws Exception{
+	public List<MemberDto> selectList() throws Exception{
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
 			String sql = "SELECT USER_NO, USER_NAME, USER_EMAIL, USER_CRE_DATE";
 			sql += " FROM USER_INFO";
-			sql += " ORDER BY USER_NO DESC";
+//			sql += " ORDER BY USER_NO DESC";
 			
 			pstmt = connection.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
 			
-			ArrayList<UserDto> userList = new ArrayList<UserDto>();
+			ArrayList<MemberDto> memberList = new ArrayList<MemberDto>();
 			
-			int no = 0;
-			String name = "";
-			String email = "";
-			Date creDate = null;
+			int userNo = 0;
+			String userName = "";
+			String userEmail = "";
+			Date userCreateDate = null;
 			
 			while (rs.next()) {
-				no = rs.getInt("USER_NO");
-				name = rs.getString("USER_NAME");
-				email = rs.getString("USER_EMAIL");
-				creDate = rs.getDate("USER_CRE_DATE");
+				userNo = rs.getInt("USER_NO");
+				userName = rs.getString("USER_NAME");
+				userEmail = rs.getString("USER_EMAIL");
+				userCreateDate = rs.getDate("USER_CRE_DATE");
 				
-				UserDto userDto = new UserDto(no, name, email, creDate);
+				MemberDto memberDto = new MemberDto(userNo, userName, userEmail,  userCreateDate);
 				
-				userList.add(userDto);
+				memberList.add(memberDto);
 				
 			}
 			
-			return userList;
+			return memberList;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
@@ -75,15 +75,15 @@ public class UserDao {
 	} // 회원목록 끝
 	
 	// 회원등록
-	public int userInsert(UserDto userDto) throws Exception{
+	public int MemberInsert(MemberDto memberDto) throws Exception{
 		int resultNum = 0;
 		
 		PreparedStatement pstmt = null;
 		
 		try {
-			String email = userDto.getEmail();
-			String pwd = userDto.getPassword();
-			String name = userDto.getName();
+			String email = memberDto.getUserEmail();
+			String pwd = memberDto.getUserPwd();
+			String name = memberDto.getUserName();
 			
 			String sql = "";
 			
@@ -118,7 +118,7 @@ public class UserDao {
 	
 	
 //	회원삭제
-	public int userDelete(int no) throws SQLException{
+	public int MemberDelete(int no) throws SQLException{
 		int result = 0;
 		
 		PreparedStatement pstmt = null;
@@ -149,8 +149,8 @@ public class UserDao {
 		
 		return result;
 	}
-	public UserDto userSelectOne(int no) throws Exception{
-		UserDto userDto = null;
+	public MemberDto MemberSelectOne(int no) throws Exception{
+		MemberDto memberDto = null;
 				
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -177,13 +177,13 @@ public class UserDao {
 				email = rs.getString("USER_EMAIL");
 				creDate = rs.getDate("USER_CRE_DATE");
 				
-				userDto = new UserDto();
+				memberDto = new MemberDto();
 				
 				
-				userDto.setNo(no);
-				userDto.setName(mName);
-				userDto.setEmail(email);
-				userDto.setCreateDate(creDate);
+				memberDto.setUserNo(no);;
+				memberDto.setUserName(mName);
+				memberDto.setUserEmail(email);
+				memberDto.setUserCreateDate(creDate);
 				
 			}else {
 				throw new Exception("해당 번호의 회원을 찾을 수 없습니다");
@@ -211,10 +211,10 @@ public class UserDao {
 			
 		} //finally end
 		
-		return userDto;
+		return memberDto;
 	}
 	
-	public int userUpdate(UserDto userDto) throws Exception{
+	public int memberUpdate(MemberDto memberDto) throws Exception{
 		int result = 0;
 		
 		PreparedStatement pstmt = null;
@@ -228,9 +228,9 @@ public class UserDao {
 		try {
 			pstmt = connection.prepareStatement(sql);
 			
-			pstmt.setString(1, userDto.getEmail());
-			pstmt.setString(2, userDto.getName());
-			pstmt.setInt(3, userDto.getNo());
+			pstmt.setString(1, memberDto.getUserEmail());
+			pstmt.setString(2, memberDto.getUserName());
+			pstmt.setInt(3, memberDto.getUserNo());
 			
 			result = pstmt.executeUpdate();
 			
@@ -252,7 +252,7 @@ public class UserDao {
 		return result;
 		
 	}
-	public UserDto userExist(String email, String pwd)
+	public MemberDto memberExist(String userEmail, String userPwd)
 			throws SQLException{
 		
 		PreparedStatement pstmt = null;
@@ -265,6 +265,7 @@ public class UserDao {
 		sql += " AND  USER_PWD = ?";
 		
 		String name = "";
+		String email = "";
 		
 		try {
 			
@@ -272,21 +273,21 @@ public class UserDao {
 			
 			int colIndex = 1;
 			
-			pstmt.setString(colIndex++, email);
-			pstmt.setString(colIndex, pwd);
+			pstmt.setString(colIndex++, userEmail);
+			pstmt.setString(colIndex, userPwd);
 			
 			rs = pstmt.executeQuery();
 			
-			UserDto userDto = new UserDto();
+			MemberDto MemberDto = new MemberDto();
 			
 			if(rs.next()) {
-				email = rs.getString("email");
-				name = rs.getString("mname");
+				email = rs.getString("userEmail");
+				name = rs.getString("userName");
 				
-				userDto.setEmail(email);
-				userDto.setName(name);
+				MemberDto.setUserEmail(email);;
+				MemberDto.setUserName(name);
 				
-				return userDto;
+				return MemberDto;
 			}		
 		} catch (Exception e) {
 			// TODO: handle exception

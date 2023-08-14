@@ -37,9 +37,9 @@ var essenAgree = document.getElementById("allTerms");
 		  };
 		
 		  //아이디 영문자(4자 이상) 정규식
-		  var idCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8}$/;
+		  var idCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{20}$/;
 		  
-		  if (!idCheck.test(pwd.value)) {
+		  if (!idCheck.test(userId.value)) {
 			    alert("아이디는 4자 이상이어야 합니다.");
 			    userId.focus();
 			    return false;

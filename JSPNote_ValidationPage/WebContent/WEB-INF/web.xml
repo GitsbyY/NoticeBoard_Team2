@@ -18,7 +18,7 @@
 	</context-param>
 	<context-param>
 		<param-name>password</param-name>
-		<param-value>8632</param-value>
+		<param-value>mid12</param-value>
 	</context-param>
 
 	

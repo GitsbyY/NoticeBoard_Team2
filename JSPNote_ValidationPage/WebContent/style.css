@@ -136,29 +136,31 @@
 	    color: #0f0f0f;
 	    font-weight: bold;
 	}
+	.termsWrap input[type=checkbox] {
+    vertical-align: middle; /* 중앙 정렬을 위해 */
+    margin-right: 5px; /* 체크박스와 레이블 사이의 간격 조정을 위해 */
+	}
 	
-	.termsWrap input[type=checkbox] + label {
-	    color: #0f0f0f;
-	    font-size: 16px;
-	    letter-spacing: -.96px;
+	.termsWrap label {
 	    display: inline-block;
-	    cursor: pointer;
-	    padding-left: 5px;
-	    z-index: 5;
+	    vertical-align: middle; /* 중앙 정렬을 위해 */
 	}
-	.termsWrap input[type=checkbox] + label > strong {
-	    color: #DB3838;
-	    font-weight: normal;
+	
+	.termsWrap label strong {
+    color: red;
 	}
- 	.termsWrap button { 
- 		background: #fff; 
- 		border: 1px solid black;
- 		color: #919191;
- 		position: relative;
-  		top: 28px;
-  		left: 300px;
- 	} 
- 	
+	
+	.termsButtonLabel {
+    display: flex; /* Flex layout을 사용하여 내용과 버튼을 가로로 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: space-between; /* 내용과 버튼 사이의 여백을 최대화하여 버튼을 오른쪽에 위치 */
+	}
+	
+	.termsButtonLabel button.termsHide {
+	 align-self: flex-end; /* 버튼을 아이템의 끝으로 정렬 */
+    vertical-align: middle;
+    /* 다른 스타일 속성들을 필요에 따라 지정할 수 있음 */
+	}
 	
 	.inputUser {
     	position: relative;
@@ -255,11 +257,14 @@
 	    line-height: 52px;
 	    font-size: 17px;
 	    font-weight: bold;
-	    background-color: #2070eb;
+	    background-color: gray;
+/* 	    background-color: #2070eb; */
 	    color: #fff;
 	    text-align: center;
 	    cursor: pointer;
-	    margin-top: 24px;
+	    margin-top: 12px;
+	    margin-bottom: 12px;
+	    padding-bottom: 12px;
 	    border-radius: 4px;
 	}
 
@@ -276,7 +281,13 @@
 	   outline : 2px solid #0080ff; 
 	}
 	
-	
+	.activeButton {
+    background-color: blue; /* 파란색 배경 */
+    color: white; /* 흰색 글자색 */
+    border: none; /* 테두리 없음 */
+    cursor: pointer; /* 커서 모양 변경 */
+    /* 기타 원하는 스타일을 추가할 수 있습니다 */
+}
 	
 	
 	

@@ -6,32 +6,27 @@
 <meta charset="UTF-8">
 <title>헤더</title>
 <script type="text/javascript">
-	function loginHomeFnc() {
-		window.open("./FirstPage/LoginForm.jsp","_self");
-	}
+	
 </script>
 <style>
 	
-	.headerLogin{ 
+	#header { 
 	 	width: 440px;
 	 	padding: 100px 0px 0px;
 	 	margin: 0px auto;
- 	 	position:relative; 
 	 	
 	/*  	margin-top:px;  */
 	 } 
 	.danawaImg{ /*다나와 이미지 */
 		width: 128px;
 		height: 28px;
-/*  		float:left;  */
-		cursor: pointer;
 	}
 </style>
 </head>
 
 <body>
 		<div id="header" class="headerLogin">
-			<img alt="다나와 이미지" src="./img/danawa.jpg" class="danawaImg" onclick="loginHomeFnc()">
+			<img alt="다나와 이미지" src="./images/danawa1.jpg" class="danawaImg" onclick="loginScreenFnc()">
 		</div>
 </body>
 

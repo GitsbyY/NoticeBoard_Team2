@@ -1,112 +1,103 @@
 @charset "UTF-8";
-	body, input, button, select, input, txtArea
-	, h1, h2, h3, h4, h5, h6, img, dl, dt, dd, ul
-	, ol, li, legend, hr, em, addres, div, p, strong
-	, fieldset, form {
-    					padding: 0;
-					}
+
+/* Reset CSS */
+	body, input, button, select, textarea, h1, h2, h3, h4, h5, h6, img, dl, dt, dd, ul, ol, li, legend, hr, em, address, div, p, strong, fieldset, form {
+	    padding: 0;
+	    margin: 0;
+	    border: 0;
+	}
 	
 	body, input, textarea, select, button, table {
 	    font-size: 12px;
 	    text-align: left;
-    }
-    html, body {
+	}
+	
+	html, body {
 	    width: 100%;
 	    height: 100%;
 	    position: relative;
 	    margin: auto;
 	    background-color: #c0c0c0;
 	}
-    
-    button {
-    	cursor: pointer;
-    }
-    
-    div {
-    	display: block;
-    }
-    
-/*     .inputUser:focus{ */
-/*     	outline : 2px solid #0080ff; */
-/*     } */
-    
-/*     -------------------------헤더------------------------- */
+	
+	button {
+	    cursor: pointer;
+	}
+	
+	div {
+	    display: block;
+	}
+	
+	/* Header Styles */
 	.headerLogin {
 	    display: flex;
-	    align-items: flex-end; /* 아래 정렬로 변경 */
-	    margin-block-start: 1em;
-	    margin-block-end: 1em;
-	    margin-inline-start: 0px;
-	    margin-inline-end: 0px;
+	    align-items: flex-end;
+	    margin: 1em 0;
 	    font-weight: bold;
 	    font-size: 16px;
 	}
+	
 	.danawaImg {
 	    width: 128px;
 	    height: 28px;
 	    cursor: pointer;
-	    margin-top: 10px;
-	    margin-right: 3px; /* 이미지 오른쪽 여백 설정 */
+	    margin: 10px 3px;
 	}
 	
-	/* 공통 스타일 설정 */
+	/* Common Styles */
 	.container {
 	    width: 100%;
 	    margin: 0 auto;
 	    padding: 20px;
 	}
-    
+	
 	.dnawaUserJoinBackGroundClass {
-	    width : 793px;
-	    height : 913px;
+	    width: 793px;
+	    height: 913px;
 	    background-color: #c0c0c0;
-	    color : #666666;
+	    color: #666666;
 	    font-family: "Malgun Gothic", "Apple SD Gothic Neo";
 	    margin: auto;
 	}
 	
-	
-	.containerLoginContentlogin{
-    	min-height: auto;
-    	background-color: #fff;
-    	margin: auto;
+	.containerLoginContentlogin {
+	    min-height: auto;
+	    background-color: #fff;
+	    margin: auto;
 	}
 	
-	.userJoinForm{
-		width : 600px;
-		height : 1779px;
-		display : block;
-		margin: auto;
+	.userJoinForm {
+	    width: 600px;
+	    height: 1779px;
+	    display: block;
+	    margin: auto;
 	}
 	
 	.wrapUserJoin {
-		width: 440px;
-		margin: 0 auto;
-    	box-sizing: border-box;
+	    width: 440px;
+	    margin: 0 auto;
+	    box-sizing: border-box;
 	}
 	
 	.indiUser {
-		width : 220px;
-		height: 26px;
-   	 	border-bottom: 2px solid #2070eb;
-   	 	text-align: center;
-   	 	cursor: pointer;
+	    width: 220px;
+	    height: 26px;
+	    border-bottom: 2px solid #2070eb;
+	    text-align: center;
+	    cursor: pointer;
 	}
 	
 	h3 {
-		margin-block-start: 1em;
-    	margin-block-end: 1em;
-    	margin-inline-start: 0px;
-    	margin-inline-end: 0px;
-    	font-weight: bold;
-    	font-size: 19px;
-    	color: #2070eb;
-	}				
+	    margin: 1em 0;
+	    font-weight: bold;
+	    font-size: 19px;
+	    color: #2070eb;
+	}
 	
 	.instanceUse {
-		height : 172px;
-		margin-bottom : 40px;
-		padding-top : 28px; 
+	    height: 172px;
+	    margin-bottom: 40px;
+	    padding-top: 28px;
 	}
 	
 	.instanceUse > .instanceUseTittle {
@@ -118,14 +109,14 @@
 	}
 	
 	.boxSnsJoin {
-		display: flex;
-		margin-top: 20px;
+	    display: flex;
+	    margin-top: 20px;
 	}
 	
 	.boxSnsJoin > .boxSnsLink {
-		align-items: center;
-		margin-top: 20px;
-	    float: left;	
+	    align-items: center;
+	    margin-top: 20px;
+	    float: left;
 	    margin: 0 auto 12px;
 	    width: 68px;
 	    height: 68px;
@@ -139,85 +130,92 @@
 	}
 	
 	.boxSnsLink > a {
-		text-decoration: none;
+	    text-decoration: none;
 	}
-	.boxSnsLink > a :hover{
-		text-decoration: underline;
-		color: blue;
+	
+	.boxSnsLink > a:hover {
+	    text-decoration: underline;
+	    color: blue;
 	}
 	
 	.titleSns {
-		margin-left: 26px;
-		color: black;
+	    margin-left: 26px;
+	    color: black;
 	}
 	
-	.joinTitle{
-		margin-bottom : 20px
+	.joinTitle {
+	    margin-bottom: 20px;
 	}
 	
 	.textTitle {
-		font-size: 18px;
+	    font-size: 18px;
 	    line-height: 26px;
 	    letter-spacing: -0.4px;
 	    color: #0f0f0f;
 	    font-weight: bold;
 	}
+	
 	.termsWrap input[type=checkbox] {
-    vertical-align: middle; /* 중앙 정렬을 위해 */
-    margin-right: 5px; /* 체크박스와 레이블 사이의 간격 조정을 위해 */
+	    vertical-align: middle;
+	    margin-right: 5px;
 	}
 	
 	.termsWrap label {
 	    display: inline-block;
-	    vertical-align: middle; /* 중앙 정렬을 위해 */
+	    vertical-align: middle;
 	}
 	
 	.termsWrap label strong {
-    color: red;
+	    color: red;
 	}
 	
 	.termsButtonLabel {
-    display: flex; /* Flex layout을 사용하여 내용과 버튼을 가로로 정렬 */
-    align-items: center; /* 수직 가운데 정렬 */
-    justify-content: space-between; /* 내용과 버튼 사이의 여백을 최대화하여 버튼을 오른쪽에 위치 */
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
 	}
 	
 	.termsButtonLabel button.termsHide {
-	 align-self: flex-end; /* 버튼을 아이템의 끝으로 정렬 */
-    vertical-align: middle;
-    /* 다른 스타일 속성들을 필요에 따라 지정할 수 있음 */
+	    align-self: flex-end;
+	    vertical-align: middle;
 	}
 	
 	.inputUser {
-    	position: relative;
-    	height: 30px;
-    	display: inline-block;
- 	}
-
-	.inputUser input {
-/* 		padding-right: 30px; */
-		height: inherit;
+	    position: relative;
+	    height: 30px;
+	    display: inline-block;
 	}
 	
-	.inputWithLabel {
+	.inputUser input {
+	    height: inherit;
+	}
+	
+	.inputWithLabel,
+	.inputWithButton {
+	    position: relative;
 	    display: flex;
 	    align-items: center;
-	    position: relative; /* For positioning the button */
-	
 	}
 	
 	.inputWithLabel label {
-	    flex-shrink: 0; /* Prevent label from shrinking */
-	    padding-right: 10px; /* Add spacing between label and input */
+	    position: absolute;
+	    top: -30px;
+	    left: 10px;
+	    font-size: 12px;
+	    color: #333;
+/* 	     z-index: 1; 라벨을 앞으로 가져와서 인풋 위에 배치 */
+	    pointer-events: none;
 	}
 	
-	.inputWithLabel .inputUser {
-	    flex: 1; /* Expand input to take remaining space */
-	    padding-right: 30px; /* Adjust padding to accommodate the button */
-	    box-sizing: border-box; /* Include padding in total width */
+	.inputWithLabel .inputUser,
+	.inputWithButton .inputUser {
+	    flex: 1;
+	    padding-right: 30px;
+	    box-sizing: border-box;
 	}
 	
-	.inputWithLabel .btnDel {
+	.inputWithLabel .btnDel,
+	.inputWithButton .btnDel {
 	    position: absolute;
 	    right: 5px;
 	    top: 50%;
@@ -225,55 +223,25 @@
 	    border: none;
 	    background-color: transparent;
 	    background: url('./img/delete.jpg') no-repeat;
-	    background-size: 20px 20px;
+	    background-size: 25px 25px;
 	    width: 20px;
 	    height: 20px;
 	    cursor: pointer;
 	}
-	.joinWrap{
-		position: relative;
+	
+	.joinWrap {
+	    position: relative;
 	    padding-top: 30px;
 	    margin-top: 20px;
 	}
-	.inputUser {
-	    border: 1px solid #c4c4c4;
-	    border-radius: 4px;
-	    font-size: 15px;
-	    color: #333;
-	    display: block;
-	    width: 100%;
-/* 	    padding-left: 16px; */
-	    height: 48px;
-	    line-height: 48px;
-	    box-sizing: border-box;
-	}
 	
-	input[type="text"]:disabled {
-  		background: #ccc;
-	}
-	
-	.lifeUserTextTitle{
-		font-size: 16px;
-	    color: #0f0f0f;
-	    letter-spacing: -0.8px;
-	    line-height: 24px;
-	}
-	
-	.formRadio{
-		float: left;
-	}
-	
-	.termsMarketing {
-		padding-top: 10px;
+	.termsMarketing,
+	.termsMarketingCheckBox {
+	    float: left;
+	    padding-top: 15px;
+	    padding-bottom: 15px;
 	    margin-top: 20px;
 	    margin-bottom: 0;
-	    
-	}
-	
-	.termsMarketingCheckBox {
-	  	float: left;
-	  	padding-top: 15px;
-	  	padding-bottom: 15px;
 	}
 	
 	.buttonJoin {
@@ -284,39 +252,31 @@
 	    font-size: 17px;
 	    font-weight: bold;
 	    background-color: gray;
-/* 	    background-color: #2070eb; */
 	    color: #fff;
 	    text-align: center;
 	    cursor: pointer;
-	    margin-top: 12px;
-	    margin-bottom: 12px;
+	    margin: 12px 0;
 	    padding-bottom: 12px;
 	    border-radius: 4px;
 	}
-
+	
 	.termsCheckbox input[type=checkbox] + label > span {
 	    color: blue;
 	    font-weight: normal;
 	}
 	
-/* 	-------------------invalidation CSS-------------------- */
+	/* Invalid CSS */
 	.errorOutline {
-	    border: 1px solid red; 
+	    border: 1px solid red;
 	}
+	
 	.focusOutline {
-	   outline : 2px solid #0080ff; 
+	    outline: 2px solid #0080ff;
 	}
 	
 	.activeButton {
-    background-color: blue; /* 파란색 배경 */
-    color: white; /* 흰색 글자색 */
-    border: none; /* 테두리 없음 */
-    cursor: pointer; /* 커서 모양 변경 */
-    /* 기타 원하는 스타일을 추가할 수 있습니다 */
-}
-	
-	
-	
-	
-	
-	
+	    background-color: blue;
+	    color: white;
+	    border: none;
+	    cursor: pointer;
+	}

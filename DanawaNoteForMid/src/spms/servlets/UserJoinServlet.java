@@ -21,7 +21,7 @@ import spms.dao.MemberDao;
 import spms.dto.MemberDto;
 
 
-@WebServlet("/user/join")
+@WebServlet("/join/join")
 public class UserJoinServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -43,7 +43,7 @@ public class UserJoinServlet extends HttpServlet{
 			RequestDispatcher dispatcher = 
 				request.getRequestDispatcher("/join/JoinForm.jsp");
 			
-			// 인클루딩
+			// �씤�겢猷⑤뵫
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -56,9 +56,9 @@ public class UserJoinServlet extends HttpServlet{
 			dispatcher.forward(request, response);
 		}
 		
-	} // doGet 메서드 끝
+	} // doGet 硫붿꽌�뱶 �걹
 	
-	// 데이터베이스에 데이터 추가, 회원정보 저장
+	// �뜲�씠�꽣踰좎씠�뒪�뿉 �뜲�씠�꽣 異붽�, �쉶�썝�젙蹂� ���옣
 		@Override
 		protected void doPost(HttpServletRequest req
 			, HttpServletResponse res)
@@ -67,8 +67,8 @@ public class UserJoinServlet extends HttpServlet{
 			Connection conn = null;
 			
 			
-			// 입력 매개변수의 값 가져오기
-			//아이디 비밀번호 이메일 이름 폰번호 닉네임
+			// �엯�젰 留ㅺ컻蹂��닔�쓽 媛� 媛��졇�삤湲�
+			//�븘�씠�뵒 鍮꾨�踰덊샇 �씠硫붿씪 �씠由� �룿踰덊샇 �땳�꽕�엫
 			String id = req.getParameter("userId");
 			String pwd = req.getParameter("userPwd");
 			String email = req.getParameter("email");

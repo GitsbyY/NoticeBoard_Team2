@@ -11,6 +11,7 @@
 		 var loginUrl = '<c:url value="/login/loginForm"/>';
 	     window.location.href = loginUrl;
 	}
+	console.log("JavaScript 버전: " + navigator.userAgent);
 </script>
 <style>
 

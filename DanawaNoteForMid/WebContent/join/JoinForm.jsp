@@ -12,9 +12,9 @@
 
 
 <script type="text/javascript">
-function loginScreenFnc() {
-    window.location.href = "../login/loginForm";
-}
+	function loginScreenFnc() {
+		window.location.href = "../login/loginForm";
+	}
 </script>
 
 
@@ -25,14 +25,14 @@ function loginScreenFnc() {
 	<div id="dnawaUserJoinBackGround" class="dnawaUserJoinBackGroundClass">
 
 		<div id="danawaUserJoinBody" class="containerLoginContentlogin">
-		
+
 			<form name="formInfo" method="post" class="userJoinForm"
 				id="danawaUserJoinBodyForm" action='./join'>
 				<div id="header" class="headerLogin">
-            		<img alt="다나와 이미지" src="/DanawaNoteForMid/img/danawa1.jpg" class="danawaImg" 
-            			onclick="loginScreenFnc()">
-            		<h2 style="margin: 0;">회원가입</h2>
-        		</div>
+					<img alt="다나와 이미지" src="/DanawaNoteForMid/img/danawa1.jpg"
+						class="danawaImg" onclick="loginScreenFnc()">
+					<h2 style="margin: 0;">회원가입</h2>
+				</div>
 				<div class="wrapUserJoin">
 					<!-- 		개인회원div		 -->
 					<div class="indiUser">
@@ -86,21 +86,19 @@ function loginScreenFnc() {
 							</div>
 							<div class="termsCheckbox">
 								<input type='checkbox' name='terms' value='useService'
-									id='useServiceCheckbox' /> 
-								<label for="useServiceCheckbox" class="termsButtonLabel">
-									서비스 이용 약관 <strong>(필수)</strong>
+									id='useServiceCheckbox' /> <label for="useServiceCheckbox"
+									class="termsButtonLabel"> 서비스 이용 약관 <strong>(필수)</strong>
 								</label>
 								<button type="button" class="termsHide"
 									onclick="shapeChangeFnc()">내용보기</button>
 							</div>
 							<div class="termsCheckbox">
 								<input type='checkbox' name='terms' value='privateInfoCollect'
-									id='privateInfoCheckbox' /> 
-								<label for="privateInfoCheckbox" class="termsButtonLabel">
-									개인정보 수집 및 이용 <strong>(필수)</strong>
+									id='privateInfoCheckbox' /> <label for="privateInfoCheckbox"
+									class="termsButtonLabel"> 개인정보 수집 및 이용 <strong>(필수)</strong>
 								</label>
-									<button type="button" class="termsHide" 
-										onclick="shapeChangeFnc()">내용보기</button>
+								<button type="button" class="termsHide"
+									onclick="shapeChangeFnc()">내용보기</button>
 							</div>
 						</div>
 
@@ -109,14 +107,12 @@ function loginScreenFnc() {
 						<div class="joinWrap">
 							<!-- 		아이디div		 -->
 							<div class="joinId">
-								<label for="UserJoinId">아이디</label>
 								<div class="inputWithButton">
-
+									<label for="UserJoinId">아이디</label>
 									<input type="text" class="inputUser" id="UserJoinId"
-										name="userId" placeholder="영문 4자 이상, 최대 20자">
+										name="userId" placeholder="영문 4자 이상, 최대 20자"/>
 									<button type="button" class="btnDel"
-										onClick="clearInput('UserJoinId')">
-									</button>
+										onClick="clearInput('UserJoinId')"></button>
 								</div>
 							</div>
 
@@ -128,9 +124,9 @@ function loginScreenFnc() {
 							<div class="joinPwd">
 
 								<div class="inputWithButton">
-									<label for="UserJoinPwd">비밀번호</label> <input type="password"
-										class="inputUser" id="UserJoinPwd" name="userPwd"
-										placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상">
+									<label for="UserJoinPwd">비밀번호</label> 
+									<input type="password" class="inputUser" id="UserJoinPwd" 
+										name="userPwd" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상"/>
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinPwd')"></button>
 								</div>
@@ -144,9 +140,9 @@ function loginScreenFnc() {
 							<div class="joinPwdConfirm">
 
 								<div class="inputWithButton">
-									<label for="UserJoinPwdConfim">비밀번호 확인</label> <input
-										class="inputUser" type="password" name="UserPwdConfirm"
-										id="UserJoinPwdConfim" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상">
+									<label for="UserJoinPwdConfim">비밀번호 확인</label> 
+									<input class="inputUser" type="password" name="UserPwdConfirm"
+										id="UserJoinPwdConfim" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상"/>
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinPwdConfim')"></button>
 								</div>
@@ -160,9 +156,9 @@ function loginScreenFnc() {
 							<div class="joinEmail">
 
 								<div class="inputWithButton">
-									<label for="UserJoinEmail">이메일 주소</label> <input
-										class="inputUser" type="text" name="email" id="UserJoinEmail"
-										placeholder="이메일 주소 입력">
+									<label for="UserJoinEmail">이메일 주소</label> 
+									<input class="inputUser" type="text" name="email" id="UserJoinEmail"
+										placeholder="이메일 주소 입력"/>
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinEmail')"></button>
 								</div>
@@ -177,9 +173,9 @@ function loginScreenFnc() {
 							<div class="joinUserName">
 
 								<div class="inputWithButton">
-									<label for="UserJoinUserName">이름</label> <input
-										class="inputUser" type="text" name="userName"
-										id="UserJoinUserName" placeholder="이름 입력">
+									<label for="UserJoinUserName">이름</label> 
+									<input class="inputUser" type="text" name="userName"
+										id="UserJoinUserName" placeholder="이름 입력"/>
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinUserName')"></button>
 								</div>
@@ -193,8 +189,8 @@ function loginScreenFnc() {
 							<div class="joinPhoneNum">
 
 								<div class="inputWithButton">
-									<label for="UserPhoneNum">휴대폰 번호</label> <input
-										class="inputUser" type="text" name="phoneNum"
+									<label for="UserPhoneNum">휴대폰 번호</label> 
+									<input class="inputUser" type="text" name="phoneNum"
 										id="UserPhoneNum" placeholder="휴대폰 번호 입력">
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserPhoneNum')"></button>
@@ -214,13 +210,13 @@ function loginScreenFnc() {
 							<div class="joinVerifiedUser">
 								<div class="joinPhoneNumVerifiedNum"
 									id="joinUserPhoneNumVerifiedNum">
-									<label for="UserPhoneNumVerifiedNum">인증된 번호</label> <input
-										class="inputUser" type="text" name="userName"
+									<label for="UserPhoneNumVerifiedNum">인증된 번호</label> 
+									<input class="inputUser" type="text" name="userName"
 										id="UserPhoneNumVerifiedNum" disabled />
 								</div>
 								<div class="joinVerifiedName" id="joinVerifiedUserName">
-									<label for="VerifiedUserName">이름</label> <input
-										class="inputUser" type="text" disabled name="userName"
+									<label for="VerifiedUserName">이름</label> 
+									<input class="inputUser" type="text" disabled name="userName"
 										id="VerifiedUserName" disabled />
 								</div>
 							</div>
@@ -228,9 +224,9 @@ function loginScreenFnc() {
 							<div class="joinNickname">
 
 								<div class="inputWithButton">
-									<label for="joinUserNickname">닉네임</label> <input
-										class="inputUser" type="text" name="nickName"
-										id="joinUserNickname" placeholder="한글 8자, 영문 16자 까지 가능">
+									<label for="joinUserNickname">닉네임</label> 
+									<input class="inputUser" type="text" name="nickName"
+										id="joinUserNickname" placeholder="한글 8자, 영문 16자 까지 가능"/>
 									<button type="button" class="btnDel"
 										onClick="clearInput('joinUsernickname')"></button>
 								</div>
@@ -267,7 +263,7 @@ function loginScreenFnc() {
 							<!-- 체크박스 모듈 전체선택div -->
 							<div class="termsCheckbox">
 								<input type="checkbox" id="allMarketingTerms" value='selectAll'
-									name="terms" onclick='selectAllMarketFnc()'> <label
+									name="select" onclick='selectAllMarketFnc()'> <label
 									for="allMarketingTerms"> 마케팅 활용 및 광고성 정보 수신 동의<span>(선택)</span>
 								</label>
 								<!-- 					내용보기 -->
@@ -296,7 +292,7 @@ function loginScreenFnc() {
 			</form>
 
 		</div>
-	
+
 	</div>
 
 
@@ -319,24 +315,23 @@ function loginScreenFnc() {
 	}
 
 	function selectAllMarketFnc() {
-	    var marketTerms = document.getElementsByName("MarketTerms");
+		var marketTerms = document.getElementsByName("MarketTerms");
 
-	    if (document.getElementById("allMarketingTerms").checked == true) {
-	        for (var i = 0; i < marketTerms.length; i++) {
-	            if (marketTerms[i]) {
-	                marketTerms[i].checked = true;
-	            }
-	        }
-	    } else if (document.getElementById("allMarketingTerms").checked == false) {
-	        for (var i = 0; i < marketTerms.length; i++) {
-	            if (marketTerms[i]) {
-	                marketTerms[i].checked = false;
-	            }
-	        }
-	    }
+		if (document.getElementById("allMarketingTerms").checked == true) {
+			for (var i = 0; i < marketTerms.length; i++) {
+				if (marketTerms[i]) {
+					marketTerms[i].checked = true;
+				}
+			}
+		} else if (document.getElementById("allMarketingTerms").checked == false) {
+			for (var i = 0; i < marketTerms.length; i++) {
+				if (marketTerms[i]) {
+					marketTerms[i].checked = false;
+				}
+			}
+		}
 	}
-	
-	
+
 	//아이디 div		
 	var userId = document.getElementById("UserJoinId");
 	var errMsgId = document.getElementById("UserJoinMessageId");
@@ -720,26 +715,52 @@ function loginScreenFnc() {
 
 	}
 
-	//필수약관동의체크 확인
+	// 	//필수약관동의체크 확인
 
-	function isAllChecked() {
-		var allTermsChecked = document.getElementById("allTerms").checked;
+	// 	function isAllChecked() {
+	// 		var allTermsChecked = document.getElementById("allTerms").checked;
+	// 		var requiredCheckboxes = document.getElementsByName("terms");
+	// 		var allRequiredChecked = true; // Assume all required checkboxes are checked
+
+	// 		if (allTermsChecked) {
+	// 			for (var i = 0; i < requiredCheckboxes.length; i++) {
+	// 				if (!requiredCheckboxes[i].checked) {
+	// 					allRequiredChecked = false; // At least one required checkbox is not checked
+	// 					break; // No need to continue checking
+	// 				}
+	// 			}
+	// 			return allRequiredChecked; // Return the overall result
+	// 		}
+
+	// 		return false; // All terms checkbox is not checked
+
+	// 	}
+
+	function isRequiredTermsChecked() {
 		var requiredCheckboxes = document.getElementsByName("terms");
-		var allRequiredChecked = true; // Assume all required checkboxes are checked
+		var allRequiredChecked = true;
 
-		if (allTermsChecked) {
-			for (var i = 0; i < requiredCheckboxes.length; i++) {
-				if (!requiredCheckboxes[i].checked) {
-					allRequiredChecked = false; // At least one required checkbox is not checked
-					break; // No need to continue checking
-				}
+		for (var i = 0; i < requiredCheckboxes.length; i++) {
+			if (!requiredCheckboxes[i].checked) {
+				allRequiredChecked = false;
+				break;
 			}
-			return allRequiredChecked; // Return the overall result
 		}
 
-		return false; // All terms checkbox is not checked
-
+		return allRequiredChecked;
 	}
+
+	// 호출 시 필수 약관 동의 체크만 검사
+	function isAllChecked() {
+		var allTermsChecked = document.getElementById("allTerms").checked;
+
+		if (allTermsChecked) {
+			return isRequiredTermsChecked();
+		}
+
+		return false;
+	}
+
 	// 회원가입 버튼 
 	var joinButton = document.getElementById("danawaUserJoinIn");
 	// 모든 필수 약관 동의 체크박스 엘리먼트 가져오기
@@ -749,19 +770,18 @@ function loginScreenFnc() {
 	var allFieldsValid = false;
 
 	function updateButtonState() {
-	    var allRequiredChecked = isAllChecked();
+		var allRequiredChecked = isAllChecked();
 
-	    if (isValidId && isValidPwd && isValidConPwd && isValidEmail
-	        && isValidUName && isValidMobile && isValidNickName && allRequiredChecked) {
-	        joinButton.removeAttribute("disabled");
-	        joinButton.classList.add("activeButton");
-	    } else {
-	        joinButton.setAttribute("disabled", "disabled");
-	        joinButton.classList.remove("activeButton");
-	    }
+		if (isValidId && isValidPwd && isValidConPwd && isValidEmail
+				&& isValidUName && isValidMobile && isValidNickName
+				&& allRequiredChecked) {
+			joinButton.removeAttribute("disabled");
+			joinButton.classList.add("activeButton");
+		} else {
+			joinButton.setAttribute("disabled", "disabled");
+			joinButton.classList.remove("activeButton");
+		}
 	}
-	
-	
 </script>
 
 </html>

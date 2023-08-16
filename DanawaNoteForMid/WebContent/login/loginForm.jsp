@@ -10,9 +10,6 @@
 	function loginScreenFnc() { // 이미지 클릭하면 로그인 화면으로 이동
 		window.open("loginForm.jsp","_self");		
 	}
-	function moveLoginFnc() { // 로그인 버튼
-	
-	}
 	function findLogFormFnc() { // 아이디 찾기 
 		window.open("findLogin.jsp","_self");
 	}
@@ -33,22 +30,28 @@
 *{
 	font-family: "Malgun Gothic","맑은 고딕", "Apple SD Gothic Neo";
 }
+
+html, body {
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+	    margin: auto;
+	}
 body{
-	width:1903px;
-	height:930;
 	background-color:#f5f5f5;
 }
-#bodyEntire {
-	width:600px;
-	height:930px;
-	background-color:#ffffff;
-	margin:0 auto;
-	text-align: center;
-}
-#header {
-	padding:16px;
-	margin-top:20px;
-}
+ #bodyEntire { 
+ 	width:600px;
+ 	height:930px; 
+ 	background-color:#ffffff; 
+ 	margin:0 auto; 
+ 	text-align: center; 
+ } 
+ #header { 
+ 	padding:16px; 
+ 	margin-top:20px; 
+ 	background-color: #ffffff;
+ } 
 .danawaImg{ /*다나와 이미지 */
 	float:left;	
 	width:128px;
@@ -138,12 +141,14 @@ input:focus{
 	height:29px;
 	margin:5px;
 }
-.input_wrap3 input{
+.input_wrap3 button{
 	width:400px;
 	height:50px;
 	margin:5px;
 	background-color:#2070eb;
 	border-color:#2070eb;
+	color: white;
+	cursor: pointer;
 }
 #bannerEvent { /*광고배너*/
 	width:200px;
@@ -161,11 +166,11 @@ input:focus{
 }
 </style>
 </head>
-
+<jsp:include page="/Header.jsp"/>
 <body>
 	<div id="bodyEntire"> <!-- body 전체 -->
-	<jsp:include page="./Header.jsp"/>
 		<div>
+			
 			<span><a href="https://www.naver.com/" class="notLogin">
 				비로그인 주문조회
 			</a></span>
@@ -181,49 +186,46 @@ input:focus{
 			 	<input type="radio" value="협력관리자로그인 페이지로 이동" onclick="partnerManagerFnc()">협력사관리자
 			</label>
 		</div>
-		<!-- 로그인  -->
-		<form id="loginForm">
+		<!-- 로그인   -->
+		<form method="post" id="loginForm" action='./loginForm'>
 			<div class="input_wrap1">  <!--  337*29 --> 
 				<input type="text" placeholder="아이디/인증 이메일" required
-					style="padding:10px">
+					style="padding:10px" name="id">
 			</div>	
 <!-- 			 서치바 안에 저장 버튼 <input type="button" value="저장">   -->
 			<div class="input_wrap2">
 				<input type="password" placeholder="비밀번호" required
-					style="padding:10px">
+					style="padding:10px" name="pwd">
 			</div>
 			<div class="input_wrap3">
-				<input type="submit" value="로그인" target="_blank;" onclick="moveLoginFnc()">
+				<button type="submit" id="loginBtn">로그인</button>
 			</div>					
 		</form>
 			<!-- 아이디,비번,회원가입 -->
 			<div id="findLog">
 				<a href="findLogin.jsp">아이디 찾기 | </a>
 				<a href="findPassword.jsp">비밀번호 찾기 | </a>
-				<a href="https://auth.danawa.com/joinStep1?url=https%3A%2F%2Fwww.danawa.com%2F
-				%3Fsrc%3Dadwords%26kw%3DGA0000020%26utm_source%3Dgoogle%26utm_medium%3Dcpc
-				%26utm_campaign%3Dkeyword%26gad%3D1%26gclid%3DEAIaIQobChMI9sr23e3QgAMVGdQWBR2h3A5eEAAYASAAEgKFbvD_BwE"
-					onclick="">회원가입</a>
+				<a href="../join/JoinForm.jsp">회원가입</a>
 			</div>
 			<!-- 이미지 4개   -->
 		<div id="fontSize">
 			<div id="boxSize1">
-				<span><img alt="네이버" src="./images/naver.jpg"
+				<span><img alt="네이버" src="../img/naverlogo.jpg"
 					style="width: 68px; height: 68px;">
 				<br>네이버</span>
 			</div>
 			<div id="boxSize2">
-				<span><img alt="카카오" src="./images/kakao.jpg"
+				<span><img alt="카카오" src="../img/kakaologo.jpg"
 					style="width: 68px; height: 68px;">
 				<br>카카오 로그인</span>
 			</div>
 			<div id="boxSize3">
-				<span><img alt="페이스북" src="./images/facebook.png"
+				<span><img alt="페이스북" src="../img/facebook.png"
 					style="width: 68px; height: 68px;">
 				<br>페이스북 로그인</span>
 			</div>
 			<div id="boxSize4">
-				<span><img alt="구글" src="./images/enuri.jpg"
+				<span><img alt="구글" src="../img/enurilogo.jpg"
 					style="width: 68px; height: 68px;">
 				<br>에누리 로그인</span>
 			</div>
@@ -231,19 +233,16 @@ input:focus{
 			<div id="bannerEvent">
 				<a href="https://www.google.com/webhp?hl=ko&sa=X
 				&ved=0ahUKEwiHrv-gkdGAAxXJ-zgGHefDBK0QPAgI">
-				<img alt="광고 배너" src="./images/banner.png" 
+				<img alt="광고 배너" src="../img/banner.png" 
 					style="width:400px; height:80px; margin:14px;" onclick="">
 				</a>	
 			</div>
 		</div>
 			<!-- footer -->
-			<footer>
-				<div id="tailExplan">
-					<p>Copyright ©
-					<strong>connectwave</strong> Co., Ltd. All Rights Reserved.</p>
-				</div>
-			</footer>
+		<div>
+			<jsp:include page="/Tail.jsp"/>
 		</div>
+	</div>
 </body>
 
 

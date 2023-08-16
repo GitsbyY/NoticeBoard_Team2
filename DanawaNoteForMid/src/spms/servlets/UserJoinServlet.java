@@ -39,14 +39,6 @@ public class UserJoinServlet extends HttpServlet{
 			
 			conn = (Connection) sc.getAttribute("conn");
 			
-			MemberDao memberDao = new MemberDao();
-			memberDao.setConnection(conn);
-			
-			ArrayList<MemberDto> memberList = null;
-			
-			memberList = (ArrayList<MemberDto>)memberDao.selectList();
-			
-			request.setAttribute("memberList", memberList);
 			
 			RequestDispatcher dispatcher = 
 				request.getRequestDispatcher("/join/JoinForm.jsp");
@@ -66,10 +58,58 @@ public class UserJoinServlet extends HttpServlet{
 		
 	} // doGet 메서드 끝
 	
-	@Override
-	protected void doPost(HttpServletRequest req
-		, HttpServletResponse res) throws ServletException, IOException {
-	
-	}
+	// 데이터베이스에 데이터 추가, 회원정보 저장
+		@Override
+		protected void doPost(HttpServletRequest req
+			, HttpServletResponse res)
+				throws ServletException, IOException {
+
+			Connection conn = null;
+			
+			
+			// 입력 매개변수의 값 가져오기
+			//아이디 비밀번호 이메일 이름 폰번호 닉네임
+			String id = req.getParameter("userId");
+			String pwd = req.getParameter("userPwd");
+			String email = req.getParameter("email");
+			String name = req.getParameter("userName");
+			String mobile = req.getParameter("phoneNum");
+			String nickName = req.getParameter("nickName");
+			try {
+				MemberDto memberDto = new MemberDto();
+				
+				memberDto.setUserId(id);
+				memberDto.setUserPwd(pwd);
+				memberDto.setUserEmail(email);
+				memberDto.setUserName(name);
+				memberDto.setUserPhone(mobile);
+				memberDto.setUserNickname(nickName);
+				
+				ServletContext sc = this.getServletContext();
+				
+				conn = (Connection) sc.getAttribute("conn");
+				
+				MemberDao memberDao = new MemberDao();
+				
+				memberDao.setConnection(conn);
+				
+				int resultNum = 0;
+				
+				resultNum = memberDao.MemberInsert(memberDto);
+				
+				res.sendRedirect("../login/loginForm");
+
+			}catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				
+				req.setAttribute("error", e);
+				RequestDispatcher rd = 
+						req.getRequestDispatcher("/Error.jsp");
+					
+				rd.forward(req, res);
+			}
+			
+		}
 	
 }

@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 	body, input, button, select, input, txtArea
 	, h1, h2, h3, h4, h5, h6, img, dl, dt, dd, ul
 	, ol, li, legend, hr, em, addres, div, p, strong
@@ -16,6 +15,7 @@
 	    height: 100%;
 	    position: relative;
 	    margin: auto;
+	    background-color: #c0c0c0;
 	}
     
     button {
@@ -29,6 +29,32 @@
 /*     .inputUser:focus{ */
 /*     	outline : 2px solid #0080ff; */
 /*     } */
+    
+/*     -------------------------헤더------------------------- */
+	.headerLogin {
+	    display: flex;
+	    align-items: flex-end; /* 아래 정렬로 변경 */
+	    margin-block-start: 1em;
+	    margin-block-end: 1em;
+	    margin-inline-start: 0px;
+	    margin-inline-end: 0px;
+	    font-weight: bold;
+	    font-size: 16px;
+	}
+	.danawaImg {
+	    width: 128px;
+	    height: 28px;
+	    cursor: pointer;
+	    margin-top: 10px;
+	    margin-right: 3px; /* 이미지 오른쪽 여백 설정 */
+	}
+	
+	/* 공통 스타일 설정 */
+	.container {
+	    width: 100%;
+	    margin: 0 auto;
+	    padding: 20px;
+	}
     
 	.dnawaUserJoinBackGroundClass {
 	    width : 793px;

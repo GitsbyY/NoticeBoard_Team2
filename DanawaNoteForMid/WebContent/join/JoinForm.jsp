@@ -10,20 +10,29 @@
 <style>
 </style>
 
+
 <script type="text/javascript">
-	
+function loginScreenFnc() {
+    window.location.href = "../login/loginForm";
+}
 </script>
 
+
 </head>
-<jsp:include page="/Header.jsp" />
+
 <body>
 
 	<div id="dnawaUserJoinBackGround" class="dnawaUserJoinBackGroundClass">
 
 		<div id="danawaUserJoinBody" class="containerLoginContentlogin">
-
+		
 			<form name="formInfo" method="post" class="userJoinForm"
-				id="danawaUserJoinBodyForm">
+				id="danawaUserJoinBodyForm" action='./join'>
+				<div id="header" class="headerLogin">
+            		<img alt="다나와 이미지" src="/DanawaNoteForMid/img/danawa1.jpg" class="danawaImg" 
+            			onclick="loginScreenFnc()">
+            		<h2 style="margin: 0;">회원가입</h2>
+        		</div>
 				<div class="wrapUserJoin">
 					<!-- 		개인회원div		 -->
 					<div class="indiUser">
@@ -104,10 +113,9 @@
 								<div class="inputWithButton">
 
 									<input type="text" class="inputUser" id="UserJoinId"
-										name="UserId" placeholder="영문 4자 이상, 최대 20자">
+										name="userId" placeholder="영문 4자 이상, 최대 20자">
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinId')">
-										<!-- 								<img class="btnDel" alt="deleteB" src="../img/delete.jpg"> -->
 									</button>
 								</div>
 							</div>
@@ -121,7 +129,7 @@
 
 								<div class="inputWithButton">
 									<label for="UserJoinPwd">비밀번호</label> <input type="password"
-										class="inputUser" id="UserJoinPwd" name="UserId"
+										class="inputUser" id="UserJoinPwd" name="userPwd"
 										placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상">
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinPwd')"></button>
@@ -221,8 +229,8 @@
 
 								<div class="inputWithButton">
 									<label for="joinUserNickname">닉네임</label> <input
-										class="inputUser" type="text" name="nickname"
-										id="joinUsernickname" placeholder="한글 8자, 영문 16자 까지 가능">
+										class="inputUser" type="text" name="nickName"
+										id="joinUserNickname" placeholder="한글 8자, 영문 16자 까지 가능">
 									<button type="button" class="btnDel"
 										onClick="clearInput('joinUsernickname')"></button>
 								</div>
@@ -249,7 +257,7 @@
 								<div class="formRadio">
 									<input type="radio" class="radioCheck"
 										id="danawaUserLifeUserDisagreee" name="lifeUserAgree"
-										value="off"> <label for="danawaUserLifeUserDisagree">1년</label>
+										value="off"> <label for="danawaUserLifeUserDisagreee">1년</label>
 								</div>
 							</div>
 						</div>
@@ -260,7 +268,7 @@
 							<div class="termsCheckbox">
 								<input type="checkbox" id="allMarketingTerms" value='selectAll'
 									name="terms" onclick='selectAllMarketFnc()'> <label
-									for="marketingCheckBoxAllAgree"> 마케팅 활용 및 광고성 정보 수신 동의<span>(선택)</span>
+									for="allMarketingTerms"> 마케팅 활용 및 광고성 정보 수신 동의<span>(선택)</span>
 								</label>
 								<!-- 					내용보기 -->
 								<button type="button" class="termsHide">내용보기</button>
@@ -280,14 +288,15 @@
 								</div>
 							</div>
 							<!-- 		회원가입button		 -->
-							<button type="button" id="danawaUserJoinIn" class="buttonJoin"
+							<button type="submit" id="danawaUserJoinIn" class="buttonJoin"
 								disabled="disabled">회원가입</button>
 						</div>
 					</div>
+				</div>
 			</form>
 
 		</div>
-
+	
 	</div>
 
 
@@ -310,14 +319,24 @@
 	}
 
 	function selectAllMarketFnc() {
-		if (document.getElementById("allMarketingTerms").checked == true) { //id 를 사용하여 하나의 객체만을 호출
-			for (var i = 0; i < 4; i++)
-				document.getElementsByName("MarketTerms")[i].checked = true; //name 을 사용하여 배열 형태로 담아 호출
-		} else if (document.getElementById("allMarketingTerms").checked == false) {
-			for (var i = 0; i < 4; i++)
-				document.getElementsByName("MarketTerms")[i].checked = false;
-		}
+	    var marketTerms = document.getElementsByName("MarketTerms");
+
+	    if (document.getElementById("allMarketingTerms").checked == true) {
+	        for (var i = 0; i < marketTerms.length; i++) {
+	            if (marketTerms[i]) {
+	                marketTerms[i].checked = true;
+	            }
+	        }
+	    } else if (document.getElementById("allMarketingTerms").checked == false) {
+	        for (var i = 0; i < marketTerms.length; i++) {
+	            if (marketTerms[i]) {
+	                marketTerms[i].checked = false;
+	            }
+	        }
+	    }
 	}
+	
+	
 	//아이디 div		
 	var userId = document.getElementById("UserJoinId");
 	var errMsgId = document.getElementById("UserJoinMessageId");
@@ -337,7 +356,7 @@
 	var mobile = document.getElementById("UserPhoneNum");
 	var errMsgMobile = document.getElementById("UserJoinMessageUserPhoneNum");
 	//별명 div	
-	var nickName = document.getElementById("joinUsernickname");
+	var nickName = document.getElementById("joinUserNickname");
 	var errMsgNickName = document.getElementById("UserJoinMessageUserNickname");
 
 	//영어 정규식
@@ -418,7 +437,7 @@
 		errMsgId.textContent = "";
 		// All validation checks passed
 		isValidId = true;
-
+		updateButtonState();
 	}
 
 	function handleFocusEventForId() {
@@ -466,6 +485,7 @@
 		errMsgPwd.style.color = "";
 		errMsgPwd.textContent = "";
 		isValidPwd = true;
+		updateButtonState();
 	}
 
 	function handleFocusEventForPwd() {
@@ -495,6 +515,7 @@
 		conPwd.classList.remove("focusOutline");
 		errMsgConPwd.textContent = "";
 		isValidConPwd = true;
+		updateButtonState();
 	}
 
 	function handleFocusEventForPwdConfirm() {
@@ -522,6 +543,7 @@
 		email.classList.remove("errorOutline");
 		errMsgEmail.textContent = ""; // Clear the error message
 		isValidEmail = true;
+		updateButtonState();
 
 	}
 
@@ -561,6 +583,7 @@
 		errMsgUname.style.color = "";
 		errMsgUname.textContent = "";
 		isValidUName = true;
+		updateButtonState();
 
 	}
 
@@ -600,6 +623,7 @@
 		errMsgMobile.style.color = "";
 		errMsgMobile.textContent = "";
 		isValidMobile = true;
+		updateButtonState();
 
 	}
 
@@ -639,6 +663,7 @@
 		errMsgNickName.style.color = "";
 		errMsgNickName.textContent = "";
 		isValidNickName = true;
+		updateButtonState();
 
 	}
 
@@ -722,38 +747,21 @@
 	var requiredCheckboxes = document.getElementsByName("terms");
 	// 모든 필드 유효성 검사 결과
 	var allFieldsValid = false;
-	// 이벤트 핸들러 등록
-	joinButton.addEventListener("click", function() {
-		// 모든 필드의 유효성 검사 결과가 true인지 확인
-		if (isValidId && isValidPwd && isValidConPwd && isValidEmail
-				&& isValidUName && isValidMobile && isValidNickName
-				&& isAllChecked()) {
-			// 모든 필수 약관에 동의한 경우 버튼을 활성화하고 파란색으로 스타일을 변경
-			joinButton.removeAttribute("disabled");
-			joinButton.classList.add("activeButton");
-		} else {
-			// 아닌 경우 버튼을 비활성화하고 스타일을 초기화
-			joinButton.setAttribute("disabled", "disabled");
-			joinButton.classList.remove("activeButton");
-		}
-	});
 
-	// 필수 약관 동의 체크박스 이벤트 핸들러 등록
-	allTermsCheckbox.addEventListener("click", function() {
-		// 모든 필수 약관에 동의하도록 체크박스 상태를 변경
-		for (var i = 0; i < requiredCheckboxes.length; i++) {
-			requiredCheckboxes[i].checked = allTermsCheckbox.checked;
-		}
+	function updateButtonState() {
+	    var allRequiredChecked = isAllChecked();
 
-		// 버튼 활성/비활성 상태 업데이트
-		if (allTermsCheckbox.checked) {
-			joinButton.removeAttribute("disabled");
-			joinButton.classList.add("activeButton");
-		} else {
-			joinButton.setAttribute("disabled", "disabled");
-			joinButton.classList.remove("activeButton");
-		}
-	});
+	    if (isValidId && isValidPwd && isValidConPwd && isValidEmail
+	        && isValidUName && isValidMobile && isValidNickName && allRequiredChecked) {
+	        joinButton.removeAttribute("disabled");
+	        joinButton.classList.add("activeButton");
+	    } else {
+	        joinButton.setAttribute("disabled", "disabled");
+	        joinButton.classList.remove("activeButton");
+	    }
+	}
+	
+	
 </script>
 
 </html>

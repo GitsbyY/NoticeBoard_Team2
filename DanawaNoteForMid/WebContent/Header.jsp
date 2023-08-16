@@ -1,33 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>헤더</title>
 <script type="text/javascript">
-	
+	function loginScreenFnc() {
+		 var loginUrl = '<c:url value="/login/loginForm"/>';
+	     window.location.href = loginUrl;
+	}
 </script>
 <style>
-	
-	#header { 
-	 	width: 440px;
-	 	padding: 100px 0px 0px;
-	 	margin: 0px auto;
-	 	
-	/*  	margin-top:px;  */
-	 } 
-	.danawaImg{ /*다나와 이미지 */
-		width: 128px;
-		height: 28px;
-	}
+
+/* body{ */
+/* 	background-color:#f5f5f5; */
+/* 	position: relative; */
+/* 	margin: auto; */
+/* } */
+ #bodyEntire { 
+ 	width:600px;
+ 	background-color:#ffffff; 
+ 	margin:0 auto; 
+ 	text-align: center; 
+ } 
+
+.danawaImg {
+    width: 128px;
+    height: 28px;
+    cursor: pointer;
+    margin-top: 10px; /* 이미지 상단 여백 추가 */
+}
+
+/* 공통 스타일 설정 */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
 </style>
 </head>
 
 <body>
+	<div class="bodyEntire">
 		<div id="header" class="headerLogin">
-			<img alt="다나와 이미지" src="./images/danawa1.jpg" class="danawaImg" onclick="loginScreenFnc()">
+			<div class="container">
+				<img alt="다나와 이미지" src="/DanawaNoteForMid/img/danawa1.jpg" 
+					class="danawaImg" onclick="loginScreenFnc()">
+
+				 <c:if test="${not empty sessionScope.member}">
+                <!-- 로그인된 경우 -->
+                	<span>${sessionScope.member.userNickname}님</span>
+               		<a href="${pageContext.request.contextPath}/login/logout">로그아웃</a>
+            	</c:if>
+
+			</div>
+			
 		</div>
+	</div>	
 </body>
 
 </html>

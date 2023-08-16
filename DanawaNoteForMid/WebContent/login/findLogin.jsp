@@ -11,57 +11,46 @@
 		}
 </script>
 <style>
-body{
-	width:1903px;
-	height:930;
-	background-color:#f5f5f5;
-	float: center;
-	text-align: center;
+body {
+    width: 100%; /* 전체 화면 너비 */
+    height: 930px;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
 }
-#bodyEntire {
-	width:600px;
-	height:930px;
-	background-color:#ffffff;
-	margin:auto;
-}
-/* .danawaImg { /*다나와 이미지 */ 
-/* 	width: 128px; */
-/* 	height: 28px; */
-/* 	float:left; */
-/* 	margin-top:60px; */
-/* } */
 
-#findIdBtn { /*  아이디 찾기 */
-	border-bottom: 2px solid #2027eb;
-	width:200px;
-/* 	margin-top:50px; */
-	color: 2070eb;
-	padding: 10px;
-	float:left;
-	margin-left:-79px;
+#bodyEntire {
+    width: 600px;
+    height:930px;
+    margin: 0 auto; /* 가운데 정렬 */
+    background-color: #ffffff;
 }
-#findPwdBtn { /*  비밀번호 찾기 */
-	border-bottom: 2px solid #b3b3b3;
-	width:200px;
-/* 	margin-top:50px; */
-	padding: 10px;
-	float:right;
-	margin-right:100px;
+
+#findIdBtn {
+    width: 50%; /* 버튼 너비를 50%로 설정하여 왼쪽과 오른쪽에 배치 */
+    box-sizing: border-box; /* 내부 패딩과 테두리를 포함한 전체 너비 설정 */
+    padding: 10px;
+    float: left; /* 왼쪽으로 배치 */
+    border-bottom: 2px solid #2027eb;
 }
-.findIdBtn1 {
-	border: 0;
-	outline: 0;
-	background-color: white;
-	margin-left:70px;
-	margin:auto;
+
+#findPwdBtn {
+    width: 50%; /* 버튼 너비를 50%로 설정하여 왼쪽과 오른쪽에 배치 */
+    box-sizing: border-box; /* 내부 패딩과 테두리를 포함한 전체 너비 설정 */
+    padding: 10px;
+    float: left; /* 왼쪽으로 배치 */
+    border-bottom: 2px solid gray;
 }
-.findPwdBtn2 { 
-	border-bottom: 2px solid gray; 
-	border: 0; 
-	outline: 0; 
-	background-color: white; 
-	color: gray; 
-} 
+
+.findIdBtn1,
+.findPwdBtn2 {
+    width: 100%; /* 버튼 내부 요소가 전체 너비를 차지하도록 설정 */
+    border: 0;
+    outline: 0;
+    background-color: white;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
 .forgetId1 {
 /* 	 margin-top:150px; */
 	 text-align:left;
@@ -86,6 +75,10 @@ body{
 	width:400px; 
 	height:50px; 
 	background-color: #2070eb;
+	color: white;
+	outline: none;
+	border: none;
+	border-radius: 3px;
 }
 .forgetPhoneFind{
 	width:400px; 
@@ -105,7 +98,7 @@ body{
 #insideInformation{
 	float:left;
 	margin-left:100px;
-	position: fixed;
+/* 	position: fixed; */
 	margin-top:20px;
 }
 /* #tailExplan { */
@@ -119,17 +112,16 @@ body{
 /* 	bottom:0; */
 /* } */
 
+.clear {
+    clear: both;
+}
+
 </style>
 </head>
-
+	<jsp:include page="/Header.jsp"/>
 <body>
-	<div id="bodyEntire">
-	<jsp:include page="./Header.jsp"/>
-<!-- 	<div id="header"> -->
-<!-- 		<img alt="다나와 이미지" src="./images/danawa1.jpg" class="danawaImg" -->
-<!-- 		style="margin"> -->
-<!-- 	</div> -->
-	<br>
+<div id="bodyEntire">
+
 	<div id="findIdBtn">
 		<button class="findIdBtn1" onclick="">
 			<h2 style="color:#2027eb">아이디 찾기</h2>
@@ -140,11 +132,10 @@ body{
 			<h2 style="color:gray;">비밀번호 찾기</h2>
 		</button>
 	</div>
-	<div id="danawaforgetId">
+	<div class="clear"></div> 
 		<p class="forgetId1">다나와 아이디를 모르시나요?
 			<br>등록된 인증 수단으로 아이디를 찾을 수 있습니다.</p>
-		
-	</div>
+	<div>
 	<div>
 		<p class="forgetEmail">
 			<strong>내 정보에 등록된 인증 이메일로 찾기</strong>
@@ -176,15 +167,11 @@ body{
 			개명신청 후 찾아보세요.
 		</p>
 	</details>
-<!-- 	<footer> -->
-<!-- 		<div id="tailExplan"> -->
-<!-- 			<p>Copyright © -->
-<!-- 			<strong>connectwave</strong> Co., Ltd. All Rights Reserved.</p> -->
-<!-- 		</div> -->
-<!-- 	</footer> -->
+
 	</div>
-		<jsp:include page="./Tail.jsp"/>
+		<jsp:include page="/Tail.jsp"/>
 	</div>
+</div>
 </body>
 
 

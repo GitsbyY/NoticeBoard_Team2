@@ -81,22 +81,30 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			String email = memberDto.getUserEmail();
+			//아이디/비밀번호/이메일/이름/휴대폰번호/닉네임
+			String id = memberDto.getUserId();
 			String pwd = memberDto.getUserPwd();
+			String email = memberDto.getUserEmail();
 			String name = memberDto.getUserName();
+			String mobile = memberDto.getUserPhone();
+			String nickName = memberDto.getUserNickname();
 			
 			String sql = "";
 			
 			sql += "INSERT INTO USER_INFO";
-			sql += "(USER_NO, USER_ID, USER_PWD, USER_NAME, USER_CRE_DATE, USER_MOD_DATE)";
-			sql += "VALUES(USER_INFO_NO_SEQ.nextval, ?, ?, ?";
+			sql += " VALUE(USER_NO, USER_ID, USER_PWD, USER_EMAIL, USER_PHONE, USER_NAME"
+					+ ", USER_NICKNAME, USER_CRE_DATE, USER_MOD_DATE)";
+			sql += " VALUES(USER_INFO_USER_NO_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?";
 			sql	+= ", SYSDATE, SYSDATE)";
 			
 			pstmt = connection.prepareStatement(sql);
 			
-			pstmt.setString(1, email);
+			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
-			pstmt.setString(3, name);
+			pstmt.setString(3, email);
+			pstmt.setString(4, mobile);
+			pstmt.setString(5, name);
+			pstmt.setString(6, nickName);
 			
 			resultNum = pstmt.executeUpdate();
 
@@ -252,19 +260,19 @@ public class MemberDao {
 		return result;
 		
 	}
-	public MemberDto memberExist(String userEmail, String userPwd)
+	public MemberDto memberExist(String userId, String userPwd)
 			throws SQLException{
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String sql = "";
-		sql += "SELECT  USER_NAME,  USER_EMAIL";
+		sql += "SELECT  USER_EMAIL, USER_NICKNAME";
 		sql += " FROM USER_INFO";
-		sql += " WHERE  USER_EMAIL = ?";
+		sql += " WHERE  USER_ID = ?";
 		sql += " AND  USER_PWD = ?";
 		
-		String name = "";
+		String nickName = "";
 		String email = "";
 		
 		try {
@@ -273,7 +281,7 @@ public class MemberDao {
 			
 			int colIndex = 1;
 			
-			pstmt.setString(colIndex++, userEmail);
+			pstmt.setString(colIndex++, userId);
 			pstmt.setString(colIndex, userPwd);
 			
 			rs = pstmt.executeQuery();
@@ -281,11 +289,11 @@ public class MemberDao {
 			MemberDto MemberDto = new MemberDto();
 			
 			if(rs.next()) {
-				email = rs.getString("userEmail");
-				name = rs.getString("userName");
+				email = rs.getString("USER_EMAIL");
+				nickName = rs.getString("USER_NICKNAME");
 				
-				MemberDto.setUserEmail(email);;
-				MemberDto.setUserName(name);
+				MemberDto.setUserEmail(email);
+				MemberDto.setUserNickname(nickName);
 				
 				return MemberDto;
 			}		

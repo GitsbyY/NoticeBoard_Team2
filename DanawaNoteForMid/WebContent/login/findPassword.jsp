@@ -14,55 +14,46 @@
    		}
 	</script>
 	<style>
-body{
-	width:1903px;
-	height:930;
-	background-color:#f5f5f5;
-	float: center;
-	text-align: center;
+body {
+    width: 100%; /* 전체 화면 너비 */
+    height: 930px;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
 }
 #bodyEntire {
-	width:600px;
-	height:930px;
-	margin:auto;
-	background-color:#ffffff;
+    width: 600px;
+    height:930px;
+    margin: 0 auto; /* 가운데 정렬 */
+    background-color: #ffffff;
 }
-.danawaImg{
-	width: 128px;
-	height: 28px;
-	float:left;
-	margin-top:60px;
+
+#findIdBtn {
+    width: 50%; /* 버튼 너비를 50%로 설정하여 왼쪽과 오른쪽에 배치 */
+    box-sizing: border-box; /* 내부 패딩과 테두리를 포함한 전체 너비 설정 */
+    padding: 10px;
+    float: left; /* 왼쪽으로 배치 */
+    border-bottom: 2px solid gray;
 }
-#findId1Btn { /*  아이디 찾기 */
-	border-bottom: 2px solid #b3b3b3;
-	width:200px;
-	margin-top:50px;
-	color: 2070eb;
-	padding: 10px;
-	float:left;
-	margin-left:-79px;
+
+#findPwdBtn {
+    width: 50%; /* 버튼 너비를 50%로 설정하여 왼쪽과 오른쪽에 배치 */
+    box-sizing: border-box; /* 내부 패딩과 테두리를 포함한 전체 너비 설정 */
+    padding: 10px;
+    float: left; /* 왼쪽으로 배치 */
+    border-bottom: 2px solid #2027eb;
 }
-#findPwd2Btn { /*  비밀번호 찾기 */
-	border-bottom: 2px solid #2027eb;
-	width:200px;
-	margin-top:50px;
-	padding: 10px;
-	float:right;
-	margin-right:100px;
+
+.findIdBtn1,
+.findPwdBtn2 {
+    width: 100%; /* 버튼 내부 요소가 전체 너비를 차지하도록 설정 */
+    border: 0;
+    outline: 0;
+    background-color: white;
+    text-align: center; /* 텍스트 중앙 정렬 */
+    padding: 8px; /* 여유 있는 패딩 추가 */
 }
-.findIdBtn1 {
-	border: 0;
-	outline: 0;
-	background-color: white;
-	margin-left:70px;
-}
-.findPwdBtn2 { 
-	border-bottom: 2px solid gray; 
-	border: 0; 
-	outline: 0; 
-	background-color: white; 
-	color: gray; 
-} 
 .forgetEmail {
  	 text-align:center;
 }
@@ -87,24 +78,26 @@ body{
 	position:absolute;
 	bottom:0;
 }
+.clear {
+    clear: both;
+}
 </style>
 </head>
-
+   <jsp:include page="../Header.jsp"/>
 <body>
    <div id="bodyEntire">
-   <jsp:include page="./Header.jsp"/>
-	   <div id="header" class="danawaImg" onclick="danawaImg1Fnc()">
-		</div>
-		<div id="findId1Btn">
+
+		<div id="findIdBtn">
 			<button class="findIdBtn1" onclick="findIdBtn1Fnc()">
 				<h2 style="color:gray">아이디 찾기</h2>
 			</button>
 		</div>
-	    <div id="findPwd2Btn">
+	    <div id="findPwdBtn">
 			<button class="findPwdBtn2">
 				<h2 style="color:#2027eb">비밀번호 찾기</h2>
 			</button>
 		</div>
+		<div class="clear"></div> 
 		<div>
 			<p class="forgetEmail">
 				<strong>내 정보에 등록된 인증 이메일로 찾기</strong>

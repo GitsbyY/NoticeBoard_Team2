@@ -14,12 +14,12 @@
 	</context-param>
 	<context-param>
 		<param-name>user</param-name>
-		<param-value>midpro</param-value>
+		<param-value>kty</param-value>
 		
 	</context-param>
 	<context-param>
 		<param-name>password</param-name>
-		<param-value>mid12</param-value>
+		<param-value>kty12</param-value>
 	</context-param>
 
 	

@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet{
 		rd.forward(req, res);
 		
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 		throws ServletException, IOException {

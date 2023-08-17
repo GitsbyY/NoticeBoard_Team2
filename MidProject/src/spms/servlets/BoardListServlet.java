@@ -14,44 +14,75 @@ import javax.servlet.http.HttpServletResponse;
 
 import spms.dao.BoardDao;
 import spms.dto.BoardDto;
+import spms.dto.PageDto;
 
 @WebServlet("/board/list")
 public class BoardListServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) 
-			throws ServletException, IOException {
-		Connection conn = null;
-		
-		try {
-			ServletContext sc = this.getServletContext();
-			
-			conn = (Connection) sc.getAttribute("conn");
-			
-			BoardDao boardDao = new BoardDao();
-			boardDao.setConnection(conn);
-			
-			ArrayList<BoardDto> boardList = null;
-			
-			boardList = (ArrayList<BoardDto>)boardDao.selectList();
-			
-			req.setAttribute("boardList", boardList);
-			req.setAttribute("totalContent", boardDao.totalContent());
-//			req.setAttribute("boardListNum", boardDao.boardListNum());
-			
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/board/BoardList.jsp");
-			dispatcher.forward(req, res);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) 
-			throws ServletException, IOException {
-		
-	}
-	
-	
+   @Override
+   public void doGet(HttpServletRequest req, HttpServletResponse res) 
+         throws ServletException, IOException {
+      Connection conn = null;
+      
+      try {
+         ServletContext sc = this.getServletContext();
+         
+         conn = (Connection) sc.getAttribute("conn");
+         
+         BoardDao boardDao = new BoardDao();
+         boardDao.setConnection(conn);
+         
+         ArrayList<BoardDto> boardList = null;
+         PageDto pageDto = null;
+         
+         int pageNo = 1;
+         
+         boardList = (ArrayList<BoardDto>)boardDao.selectList(pageNo);
+         pageDto = boardDao.boardListNum(pageNo);
+         
+         req.setAttribute("boardList", boardList);
+         req.setAttribute("pageDto", pageDto);
+         
+         RequestDispatcher dispatcher = req.getRequestDispatcher("/board/BoardList.jsp");
+         dispatcher.forward(req, res);
+         
+      } catch (Exception e) {
+         // TODO: handle exception
+      }
+   }
+   
+   @Override
+   public void doPost(HttpServletRequest req, HttpServletResponse res) 
+         throws ServletException, IOException {
+      Connection conn = null;
+      
+      try {
+         int pageNo = Integer.parseInt(req.getParameter("pageNo"));
+         
+         ServletContext sc = this.getServletContext();
+         
+         conn = (Connection) sc.getAttribute("conn");
+         
+         BoardDao boardDao = new BoardDao();
+         boardDao.setConnection(conn);
+         
+         ArrayList<BoardDto> boardList = null;
+         PageDto pageDto = null;
+         
+         boardList = (ArrayList<BoardDto>)boardDao.selectList(pageNo);
+         pageDto = boardDao.boardListNum(pageNo);
+         
+         req.setAttribute("boardList", boardList);
+         req.setAttribute("pageDto", pageDto);
+         
+         RequestDispatcher dispatcher = req.getRequestDispatcher("/board/BoardList.jsp");
+         dispatcher.forward(req, res);
+         
+      } catch (Exception e) {
+         // TODO: handle exception
+      }
+      
+   }
+   
+   
 }

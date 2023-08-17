@@ -31,7 +31,11 @@ public class BoardViewServlet extends HttpServlet {
 
 			BoardDao boardDao = new BoardDao();
 			boardDao.setConnection(conn);
-
+			
+			BoardDao boardDaoCnt = new BoardDao();
+	        boardDaoCnt.setConnection(conn);
+	        boardDaoCnt.postCnt(no);
+	        
 			BoardDto boardDto = boardDao.viewContent(no);
 
 			req.setAttribute("boardDto", boardDto);
@@ -57,7 +61,12 @@ public class BoardViewServlet extends HttpServlet {
 
 			BoardDao boardDao = new BoardDao();
 			boardDao.setConnection(conn);
-
+			
+//			// 이게왜됨
+//	        BoardDao boardDaoCnt = new BoardDao();
+//	        boardDaoCnt.setConnection(conn);
+//	        boardDaoCnt.postCnt(no);
+	        
 			BoardDto boardDto = boardDao.viewContent(no);
 
 			req.setAttribute("boardDto", boardDto);

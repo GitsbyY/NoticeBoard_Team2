@@ -52,6 +52,7 @@
 		function listGoFnc() {
 			location.href = "./list";
 		}
+		
 	</script>
 </head>
 

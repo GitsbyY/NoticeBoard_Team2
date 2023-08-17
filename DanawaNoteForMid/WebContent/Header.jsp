@@ -8,8 +8,15 @@
 <title>헤더</title>
 <script type="text/javascript">
 	function loginScreenFnc() {
-		 var loginUrl = '<c:url value="/login/loginForm"/>';
-	     window.location.href = loginUrl;
+		<%
+		HttpSession se = request.getSession();
+		if(se.getAttribute("member") != null) { %>
+			window.location.href = '<c:url value="/board/list"/>';
+		<%} else {
+		%>
+		var loginUrl = '<c:url value="/login/loginForm"/>';
+		window.location.href = loginUrl;
+		<% } %>
 	}
 	console.log("JavaScript 버전: " + navigator.userAgent);
 </script>

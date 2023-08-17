@@ -55,6 +55,8 @@ public class BoardWriteServlet extends HttpServlet {
 			
 			result = boardDao.addContent(boardDto);
 			
+			res.sendRedirect("./list");
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		} 

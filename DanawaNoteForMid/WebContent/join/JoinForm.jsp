@@ -15,6 +15,7 @@
 	function loginScreenFnc() {
 		window.location.href = "../login/loginForm";
 	}
+
 </script>
 
 
@@ -107,8 +108,12 @@
 						<div class="joinWrap">
 							<!-- 		아이디div		 -->
 							<div class="joinId">
-								<div class="inputWithButton">
+								<div class="inputLabel">
 									<label for="UserJoinId">아이디</label>
+								</div>
+								
+								<div class="inputWithButton">
+									
 									<input type="text" class="inputUser" id="UserJoinId"
 										name="userId" placeholder="영문 4자 이상, 최대 20자"/>
 									<button type="button" class="btnDel"
@@ -122,9 +127,11 @@
 							</div>
 							<!-- 		비밀번호div		 -->
 							<div class="joinPwd">
-
+								<div class="inputLabel">
+										<label for="UserJoinPwd">비밀번호</label> 
+								</div>
 								<div class="inputWithButton">
-									<label for="UserJoinPwd">비밀번호</label> 
+									
 									<input type="password" class="inputUser" id="UserJoinPwd" 
 										name="userPwd" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상"/>
 									<button type="button" class="btnDel"
@@ -138,9 +145,11 @@
 							</div>
 							<!-- 		비밀번호확인div		 -->
 							<div class="joinPwdConfirm">
-
+								<div class="inputLabel">
+										<label for="UserJoinPwdConfim">비밀번호 확인</label> 
+								</div>
 								<div class="inputWithButton">
-									<label for="UserJoinPwdConfim">비밀번호 확인</label> 
+									
 									<input class="inputUser" type="password" name="UserPwdConfirm"
 										id="UserJoinPwdConfim" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상"/>
 									<button type="button" class="btnDel"
@@ -154,9 +163,11 @@
 							</div>
 							<!-- 		이메일div		 -->
 							<div class="joinEmail">
-
+								<div class="inputLabel">
+										<label for="UserJoinEmail">이메일 주소</label> 
+								</div>
 								<div class="inputWithButton">
-									<label for="UserJoinEmail">이메일 주소</label> 
+									
 									<input class="inputUser" type="text" name="email" id="UserJoinEmail"
 										placeholder="이메일 주소 입력"/>
 									<button type="button" class="btnDel"
@@ -171,9 +182,11 @@
 							</div>
 							<!-- 		이름div		 -->
 							<div class="joinUserName">
-
+								<div class="inputLabel">
+										<label for="UserJoinUserName">이름</label> 
+								</div>
 								<div class="inputWithButton">
-									<label for="UserJoinUserName">이름</label> 
+									
 									<input class="inputUser" type="text" name="userName"
 										id="UserJoinUserName" placeholder="이름 입력"/>
 									<button type="button" class="btnDel"
@@ -187,9 +200,11 @@
 							</div>
 							<!-- 		휴대폰번호div		 -->
 							<div class="joinPhoneNum">
-
+								<div class="inputLabel">
+										<label for="UserPhoneNum">휴대폰 번호</label> 
+								</div>
 								<div class="inputWithButton">
-									<label for="UserPhoneNum">휴대폰 번호</label> 
+									
 									<input class="inputUser" type="text" name="phoneNum"
 										id="UserPhoneNum" placeholder="휴대폰 번호 입력">
 									<button type="button" class="btnDel"
@@ -222,9 +237,11 @@
 							</div>
 							<!-- 		닉네임div		 -->
 							<div class="joinNickname">
-
+								<div class="inputLabel">
+										<label for="joinUserNickname">닉네임</label> 
+								</div>
 								<div class="inputWithButton">
-									<label for="joinUserNickname">닉네임</label> 
+									
 									<input class="inputUser" type="text" name="nickName"
 										id="joinUserNickname" placeholder="한글 8자, 영문 16자 까지 가능"/>
 									<button type="button" class="btnDel"
@@ -300,6 +317,9 @@
 </body>
 
 <script type="text/javascript">
+	
+	
+	
 	function clearInput(inputId) {
 		document.getElementById(inputId).value = ""; // Clear the input field
 	}
@@ -714,27 +734,6 @@
 		}
 
 	}
-
-	// 	//필수약관동의체크 확인
-
-	// 	function isAllChecked() {
-	// 		var allTermsChecked = document.getElementById("allTerms").checked;
-	// 		var requiredCheckboxes = document.getElementsByName("terms");
-	// 		var allRequiredChecked = true; // Assume all required checkboxes are checked
-
-	// 		if (allTermsChecked) {
-	// 			for (var i = 0; i < requiredCheckboxes.length; i++) {
-	// 				if (!requiredCheckboxes[i].checked) {
-	// 					allRequiredChecked = false; // At least one required checkbox is not checked
-	// 					break; // No need to continue checking
-	// 				}
-	// 			}
-	// 			return allRequiredChecked; // Return the overall result
-	// 		}
-
-	// 		return false; // All terms checkbox is not checked
-
-	// 	}
 
 	function isRequiredTermsChecked() {
 		var requiredCheckboxes = document.getElementsByName("terms");

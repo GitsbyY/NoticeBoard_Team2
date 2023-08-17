@@ -15,7 +15,6 @@
 	function loginScreenFnc() {
 		window.location.href = "../login/loginForm";
 	}
-
 </script>
 
 
@@ -111,11 +110,11 @@
 								<div class="inputLabel">
 									<label for="UserJoinId">아이디</label>
 								</div>
-								
+
 								<div class="inputWithButton">
-									
+
 									<input type="text" class="inputUser" id="UserJoinId"
-										name="userId" placeholder="영문 4자 이상, 최대 20자"/>
+										name="userId" placeholder="영문 4자 이상, 최대 20자" />
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinId')"></button>
 								</div>
@@ -128,12 +127,12 @@
 							<!-- 		비밀번호div		 -->
 							<div class="joinPwd">
 								<div class="inputLabel">
-										<label for="UserJoinPwd">비밀번호</label> 
+									<label for="UserJoinPwd">비밀번호</label>
 								</div>
 								<div class="inputWithButton">
-									
-									<input type="password" class="inputUser" id="UserJoinPwd" 
-										name="userPwd" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상"/>
+
+									<input type="password" class="inputUser" id="UserJoinPwd"
+										name="userPwd" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상" />
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinPwd')"></button>
 								</div>
@@ -146,12 +145,12 @@
 							<!-- 		비밀번호확인div		 -->
 							<div class="joinPwdConfirm">
 								<div class="inputLabel">
-										<label for="UserJoinPwdConfim">비밀번호 확인</label> 
+									<label for="UserJoinPwdConfim">비밀번호 확인</label>
 								</div>
 								<div class="inputWithButton">
-									
+
 									<input class="inputUser" type="password" name="UserPwdConfirm"
-										id="UserJoinPwdConfim" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상"/>
+										id="UserJoinPwdConfim" placeholder="숫자, 영문, 특수문자 포함 최소 8자 이상" />
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinPwdConfim')"></button>
 								</div>
@@ -164,12 +163,12 @@
 							<!-- 		이메일div		 -->
 							<div class="joinEmail">
 								<div class="inputLabel">
-										<label for="UserJoinEmail">이메일 주소</label> 
+									<label for="UserJoinEmail">이메일 주소</label>
 								</div>
 								<div class="inputWithButton">
-									
-									<input class="inputUser" type="text" name="email" id="UserJoinEmail"
-										placeholder="이메일 주소 입력"/>
+
+									<input class="inputUser" type="text" name="email"
+										id="UserJoinEmail" placeholder="이메일 주소 입력" />
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinEmail')"></button>
 								</div>
@@ -183,12 +182,12 @@
 							<!-- 		이름div		 -->
 							<div class="joinUserName">
 								<div class="inputLabel">
-										<label for="UserJoinUserName">이름</label> 
+									<label for="UserJoinUserName">이름</label>
 								</div>
 								<div class="inputWithButton">
-									
+
 									<input class="inputUser" type="text" name="userName"
-										id="UserJoinUserName" placeholder="이름 입력"/>
+										id="UserJoinUserName" placeholder="이름 입력" />
 									<button type="button" class="btnDel"
 										onClick="clearInput('UserJoinUserName')"></button>
 								</div>
@@ -201,10 +200,10 @@
 							<!-- 		휴대폰번호div		 -->
 							<div class="joinPhoneNum">
 								<div class="inputLabel">
-										<label for="UserPhoneNum">휴대폰 번호</label> 
+									<label for="UserPhoneNum">휴대폰 번호</label>
 								</div>
 								<div class="inputWithButton">
-									
+
 									<input class="inputUser" type="text" name="phoneNum"
 										id="UserPhoneNum" placeholder="휴대폰 번호 입력">
 									<button type="button" class="btnDel"
@@ -224,7 +223,7 @@
 							<!-- 			인증번호와 이름 -> 본인인증이 완료되었습니다. -->
 							<div class="joinVerifiedUser">
 								<div class="inputLabel">
-										<label for="UserPhoneNumVerifiedNum">인증된 번호</label>  
+									<label for="UserPhoneNumVerifiedNum">인증된 번호</label>
 								</div>
 								<div class="joinPhoneNumVerifiedNum"
 									id="joinUserPhoneNumVerifiedNum">
@@ -232,7 +231,7 @@
 										id="UserPhoneNumVerifiedNum" disabled />
 								</div>
 								<div class="inputLabel">
-										<label for="VerifiedUserName">이름</label>   
+									<label for="VerifiedUserName">이름</label>
 								</div>
 								<div class="joinVerifiedName" id="joinVerifiedUserName">
 									<input class="inputUser" type="text" disabled name="userName"
@@ -242,12 +241,12 @@
 							<!-- 		닉네임div		 -->
 							<div class="joinNickname">
 								<div class="inputLabel">
-										<label for="joinUserNickname">닉네임</label> 
+									<label for="joinUserNickname">닉네임</label>
 								</div>
 								<div class="inputWithButton">
-									
+
 									<input class="inputUser" type="text" name="nickName"
-										id="joinUserNickname" placeholder="한글 8자, 영문 16자 까지 가능"/>
+										id="joinUserNickname" placeholder="한글 8자, 영문 16자 까지 가능" />
 									<button type="button" class="btnDel"
 										onClick="clearInput('joinUsernickname')"></button>
 								</div>
@@ -307,17 +306,17 @@
 						</div>
 						<!-- 		회원가입button		 -->
 						<button type="submit" id="danawaUserJoinIn" class="buttonJoin"
-								disabled="disabled">회원가입</button>
+							disabled="disabled">회원가입</button>
 					</div>
 				</div>
 				<p style="text-align: center; margin-top: 100px;">
-				Copyright © <strong>connectwave</strong> Co., Ltd. All Rights
-				Reserved.
+					Copyright © <strong>connectwave</strong> Co., Ltd. All Rights
+					Reserved.
 				</p>
 			</form>
-			
+
 		</div>
-			
+
 	</div>
 
 
@@ -325,11 +324,8 @@
 </body>
 
 <script type="text/javascript">
-	
-	
-	
 	function clearInput(inputId) {
-		document.getElementById(inputId).value = ""; // Clear the input field
+		document.getElementById(inputId).value = ""; // 인풋 클리어
 	}
 
 	function selectAllFnc() {

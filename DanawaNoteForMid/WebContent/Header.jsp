@@ -21,12 +21,6 @@
 	console.log("JavaScript 버전: " + navigator.userAgent);
 </script>
 <style>
-
-/* body{ */
-/* 	background-color:#f5f5f5; */
-/* 	position: relative; */
-/* 	margin: auto; */
-/* } */
  #bodyEntire { 
  	width:600px;
  	background-color:#ffffff; 

@@ -52,6 +52,7 @@ body{
  	margin-top:20px; 
  	background-color: #ffffff;
  } 
+ 
 .danawaImg{ /*다나와 이미지 */
 	float:left;	
 	width:128px;
@@ -166,11 +167,11 @@ input:focus{
 }
 </style>
 </head>
-<jsp:include page="/Header.jsp"/>
+
 <body>
 	<div id="bodyEntire"> <!-- body 전체 -->
 		<div>
-			
+			<jsp:include page="/Header.jsp"/>
 			<span><a href="https://www.naver.com/" class="notLogin">
 				비로그인 주문조회
 			</a></span>

@@ -27,11 +27,6 @@ public class BoardDao {
       ResultSet rs = null;
       
       try {
-//         String sql = "SELECT POST_NO, POST_TITLE, POST_WRITER";
-//         sql += ", POST_DATE, POST_VIEW_NO";
-//         sql += " FROM BOARD";
-//         sql += " ORDER BY POST_NO DESC";
-         
          String sql = "SELECT RN, POST_NO, POST_TITLE, POST_WRITER, POST_DATE, POST_VIEW_NO, POST_PWD";
          sql += " FROM(SELECT ROWNUM AS RN, POST_NO, POST_TITLE, POST_WRITER, POST_DATE, POST_VIEW_NO, POST_PWD";
          sql += " FROM(SELECT B.POST_NO, B.POST_TITLE, B.POST_WRITER, B.POST_DATE, B.POST_VIEW_NO, POST_PWD";
@@ -41,8 +36,6 @@ public class BoardDao {
 
          pstmt = connection.prepareStatement(sql);
          
-//         pstmt.setInt(1, 40);
-//         pstmt.setInt(2, 50);
          pstmt.setInt(1, pageNo*10-9);
          pstmt.setInt(2, pageNo*10);
          
@@ -76,7 +69,25 @@ public class BoardDao {
       } catch (Exception e) {
          e.printStackTrace();
          throw e;
-      }
+      }	finally {
+			if(rs != null) {
+				try {
+					rs.close();
+					System.out.println("ResultSet 종료");
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+					System.out.println("DB 쿼리 종료");
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
    }
 
    public int addContent(BoardDto boardDto) throws Exception {
@@ -275,13 +286,24 @@ public class BoardDao {
       } catch (Exception e) {
          e.printStackTrace();
       } finally {
-         if(rs != null) {
-            rs.close();
-         }
-         if(pstmt != null) {
-            pstmt.close();
-         }
-      }
+			if(rs != null) {
+				try {
+					rs.close();
+					System.out.println("ResultSet 종료");
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+					System.out.println("DB 쿼리 종료");
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
       return totalContentNum;
    }
    
@@ -304,19 +326,6 @@ public class BoardDao {
       pageDto.setTotalContent(totalContent);
       pageDto.setCurrentPage(pageNo);
       
-//      PreparedStatement pstmt = null;
-//      ResultSet rs = null;
-//      
-//      String sql = "SELECT POST_NO";
-//      sql += "FROM (SELECT ROWNUM AS RN, B.POST_NO";
-//      sql += " FROM BOARD B";
-//      sql += " ORDER BY POST_NO DESC";
-//      sql += ")";
-//      sql += "WHERE RN BETWEEN ? AND ?";
-//      
-//      if(rs.next()) {
-//         
-//      }
       return pageDto;
    }
 }

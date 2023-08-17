@@ -87,7 +87,14 @@ public class BoardListServlet extends HttpServlet {
          dispatcher.forward(req, res);
          
       } catch (Exception e) {
-         // TODO: handle exception
+    	  e.printStackTrace();
+			
+			req.setAttribute("error", e);
+			req.setAttribute("msg", "i'm sorry");
+			RequestDispatcher dispatcher 
+				= req.getRequestDispatcher("/Error.jsp");
+
+			dispatcher.forward(req, res);
       }
       
    }

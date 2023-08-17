@@ -81,14 +81,29 @@
  	  padding-top: 1px;
  	  border: 0px;
    }
+   #writeATag {
+   	  width: 20px;
+   }
    
-   .non-click {
-  		background-color: gold;
-	}
-
-	.click {
-		background-color: orchid;
-	}
+   .topArea {
+   	  margin: 10px;
+   }
+   
+   .postArea {
+   	  width: 580px;
+   	  height: 50px;
+   	  margin: 0px auto;
+   	  text-align: right;
+   	  background-color: #f5f5f5;
+   }
+   
+   #writeBtn {
+   	  margin-right: 20px;
+      margin-top: 14px;
+      background: linear-gradient( to bottom, white, gray );
+      border: 1px solid black;
+      border-radius: 5px;
+   }
    
 </style>
 <script type="text/javascript">
@@ -152,7 +167,7 @@
             </div>
          </form>
          <div class="postArea">
-            <a href="./write"><input type="button" value="글쓰기" name="write"></a>
+            <a href="./write" id="writeATag"><input type="button" value="글쓰기" name="write" id="writeBtn"></a>
          </div>
          
       <jsp:include page='../Tail.jsp'/>

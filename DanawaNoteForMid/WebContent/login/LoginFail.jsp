@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" http-equiv="Refresh" content="2;url=./login">
+	<meta charset="UTF-8" http-equiv="Refresh" content="2;url=./loginForm">
 	<title>로그인 실패</title>
 	
 	<script type="text/javascript">

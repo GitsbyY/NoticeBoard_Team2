@@ -223,14 +223,18 @@
 							</div>
 							<!-- 			인증번호와 이름 -> 본인인증이 완료되었습니다. -->
 							<div class="joinVerifiedUser">
+								<div class="inputLabel">
+										<label for="UserPhoneNumVerifiedNum">인증된 번호</label>  
+								</div>
 								<div class="joinPhoneNumVerifiedNum"
 									id="joinUserPhoneNumVerifiedNum">
-									<label for="UserPhoneNumVerifiedNum">인증된 번호</label> 
 									<input class="inputUser" type="text" name="userName"
 										id="UserPhoneNumVerifiedNum" disabled />
 								</div>
+								<div class="inputLabel">
+										<label for="VerifiedUserName">이름</label>   
+								</div>
 								<div class="joinVerifiedName" id="joinVerifiedUserName">
-									<label for="VerifiedUserName">이름</label> 
 									<input class="inputUser" type="text" disabled name="userName"
 										id="VerifiedUserName" disabled />
 								</div>
@@ -300,16 +304,20 @@
 										for="marketingCheckBoxAgreesms">SMS</label>
 								</div>
 							</div>
-							<!-- 		회원가입button		 -->
-							<button type="submit" id="danawaUserJoinIn" class="buttonJoin"
-								disabled="disabled">회원가입</button>
 						</div>
+						<!-- 		회원가입button		 -->
+						<button type="submit" id="danawaUserJoinIn" class="buttonJoin"
+								disabled="disabled">회원가입</button>
 					</div>
 				</div>
+				<p style="text-align: center; margin-top: 100px;">
+				Copyright © <strong>connectwave</strong> Co., Ltd. All Rights
+				Reserved.
+				</p>
 			</form>
-
+			
 		</div>
-
+			
 	</div>
 
 

@@ -157,6 +157,7 @@ public class MemberDao {
 		
 		return result;
 	}
+	
 	public MemberDto MemberSelectOne(int no) throws Exception{
 		MemberDto memberDto = null;
 				
@@ -221,6 +222,7 @@ public class MemberDao {
 		
 		return memberDto;
 	}
+	
 	
 	public int memberUpdate(MemberDto memberDto) throws Exception{
 		int result = 0;

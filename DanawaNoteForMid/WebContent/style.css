@@ -17,7 +17,7 @@
 	    height: 100%;
 	    position: relative;
 	    margin: auto;
-	    background-color: #c0c0c0;
+	    background-color: #f5f5f5;;
 	}
 	
 	button {
@@ -36,6 +36,9 @@
 	    font-weight: bold;
 	    font-size: 16px;
 	    margin-left: 70px;
+	    background-color: #fff;
+	    margin-top: 0px;
+	    height: 100px;
 	}
 	
 	.danawaImg {
@@ -53,7 +56,7 @@
 	}
 	
 	.dnawaUserJoinBackGroundClass {
-	    width: 793px;
+	    width: 620px;
 	    height: 913px;
 	    background-color: #c0c0c0;
 	    color: #666666;
@@ -161,6 +164,15 @@
 	    margin-right: 5px;
 	}
 	
+	#allTerms {
+		font-size: 16px;
+	}
+	
+	.termsCheckbox {
+		font-size: 12px;
+	}
+	
+	
 	.termsWrap label {
 	    display: inline-block;
 	    vertical-align: middle;
@@ -183,19 +195,38 @@
 	
 	.inputLabel {
 		margin-top: 3px;
-		margin-bottom: 3px;
+		margin-bottom: 5px;
+		font-size: 16px;
+		line-height: 24px;
+		color: #0f0f0f;
 	}
 	
 	.inputUser {
-	    position: relative;
-	    height: 30px;
+		position: relative;
+	    height: 48px;
 	    display: inline-block;
+	    border: 1px solid #c4c4c4;
+	    border-radius: 4px;
+	    box-sizing: border-box;
 	}
 	
 	.inputUser input {
-	    height: inherit;
+	    font-size: 15px;
+	    height: 48px;
+	    line-height: 48px;
+	    color: #333;
+	    box-sizing: border-box;
+	    width: 100%;
+	    padding: 0 10px; /* Add padding for input text */
+	    border: none; /* Remove border to override the style from inputUser */
+	    outline: none; /* Remove default outline */
 	}
 	
+	.phoneNumVerify{
+		border: 1px solid #c4c4c4;
+		font-size: 12px;
+		display: flex;
+	}
 	.inputWithLabel,
 	.inputWithButton {
 	    position: relative;
@@ -207,11 +238,14 @@
 	    position: absolute;
 	    top: -1.5em;
 	    left: 10px;
-	    font-size: 12px;
-	    color: #333;
+	    font-size: 16px;
+		line-height: 24px;
+		color: #0f0f0f;
 	    z-index: 1; 
 /* 	     라벨을 앞으로 가져와서 인풋 위에 배치 */
 	    pointer-events: none;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
 	}
 	
 	.inputWithLabel .inputUser,
@@ -242,6 +276,16 @@
 	    margin-top: 20px;
 	}
 	
+	.errTxtRed {
+		font-size: 13px;
+	}
+	
+	.joinPhoneNumVerifiedNum .inputUser,
+	.joinVerifiedName .inputUser {
+    /* 다른 스타일 설정 */
+    width: 100%; /* 두 요소의 너비를 100%로 설정 */
+	}
+	
 	.termsMarketing,
 	.termsMarketingCheckBox {
 	    float: left;
@@ -249,6 +293,62 @@
 	    padding-bottom: 15px;
 	    margin-top: 20px;
 	    margin-bottom: 0;
+	}
+	.lifeUserTextTitle{
+		font-size: 16px;
+		line-height: 24px;
+		color: #0f0f0f;
+	}
+	
+	.textInfo{
+		margin-top: 8px;
+		font-size: 14px;
+		color: #555;
+    	line-height: 20px;
+	}
+	
+	.boxRadio {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽으로 정렬 */
+    gap: 10px; /* 요소들 사이의 간격 조정 */
+	}
+	
+	.formRadio{
+		font-size: 12px;
+		display: flex;
+		align-items: center;
+	}
+	
+	.formRadio label {
+    	margin-left: 10px; /* 두 번째 라디오 버튼을 첫 번째 버튼에서 조금 떨어진 위치로 설정 */
+	}
+	
+	.allMarketingTerms{
+		padding-bottom: 10px;
+	    margin-top: 20px;
+	    margin-bottom: 0px;
+	}
+	
+	.warpTermsMarketingCheckBox{
+		border-top: 1px solid #f2f2f2;
+		display: flex;
+    	height: 50px;
+    	justify-content: flex-start; /* 왼쪽으로 정렬 */
+    	gap: 10px; /* 요소들 사이의 간격 조정 */
+	}
+	
+	.termsCheckbox input[type=checkbox] + label {
+		font-size: 13px;
+	    line-height: 20px;
+	    color: #555;
+	    display: inline-block;
+	    cursor: pointer;
+	    padding-left: 5px;
+	}
+	
+	.termsCheckbox input[type=checkbox] + label > span {
+	    color: blue;
+	    font-weight: normal;
 	}
 	
 	.buttonJoin {
@@ -258,19 +358,16 @@
 	    line-height: 52px;
 	    font-size: 17px;
 	    font-weight: bold;
-	    background-color: gray;
-	    color: #fff;
+	    background-color: #E9E9E9;
+	    color: #b2b2b2;
 	    text-align: center;
 	    cursor: pointer;
 	    margin: 12px 0;
+	    margin-top: 24px;
 	    padding-bottom: 12px;
 	    border-radius: 4px;
 	}
 	
-	.termsCheckbox input[type=checkbox] + label > span {
-	    color: blue;
-	    font-weight: normal;
-	}
 	
 	/* Invalid CSS */
 	.errorOutline {

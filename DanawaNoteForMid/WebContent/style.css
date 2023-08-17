@@ -1,13 +1,13 @@
 @charset "UTF-8";
 	
 
-	body, input, button, select, textarea, h1, h2, h3, h4, h5, h6, img, dl,
-		dt, dd, ul, ol, li, legend, hr, em, address, div, p, strong, fieldset,
-		form {
-		padding: 0;
-		margin: 0;
-		border: 0;
-	}
+/* 	body, input, button, select, textarea, h1, h2, h3, h4, h5, h6, img, dl, */
+/* 		dt, dd, ul, ol, li, legend, hr, em, address, div, p, strong, fieldset, */
+/* 		form { */
+/* 		padding: 0; */
+/* 		margin: 0; */
+/* 		border: 0; */
+/* 	} */
 	
 	body, input, textarea, select, button, table {
 		font-size: 12px;
@@ -190,9 +190,10 @@
 		margin-right: 5px; /* 원하는 간격 값으로 조정 */
 	}
 	
-	.termsButtonLabel button.termsHide {
+	.termsButtonLabel button .termsHide {
 		align-self: flex-end;
 		vertical-align: middle;
+		margin-left: 300px;
 	}
 	
 	.inputLabel, .inputWithButton label {

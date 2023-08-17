@@ -18,7 +18,12 @@
 		window.location.href = loginUrl;
 		<% } %>
 	}
-	console.log("JavaScript 버전: " + navigator.userAgent);
+	function confirmLogout() {
+        var result = confirm("로그아웃 하시겠습니까?");
+        if (result) {
+            window.location.href = "${pageContext.request.contextPath}/login/logout";
+        }
+    }
 </script>
 <style>
  #bodyEntire { 

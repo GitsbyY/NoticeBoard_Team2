@@ -11,20 +11,26 @@
 		}
 </script>
 <style>
-body {
-    width: 100%; /* 전체 화면 너비 */
-    height: 930px;
-    background-color: #f5f5f5;
-    text-align: center;
-    margin: 0; /* 기본 마진 제거 */
-    padding: 0; /* 기본 패딩 제거 */
+html, body {
+	    position: relative;
+	    margin: auto;
+	}
+body{
+	background-color:#f5f5f5;
 }
 
+#header {
+    padding: 16px;
+    background-color: #ffffff;
+    width: 568px; /* Set header width to match body width */
+    margin: 0 auto; /* Center the header within the body */
+}
 #bodyEntire {
     width: 600px;
-    height:930px;
-    margin: 0 auto; /* 가운데 정렬 */
+     	height:930px; 
+    margin: 0 auto;
     background-color: #ffffff;
+    padding-top: 20px; /* Add padding to make space for the header */
 }
 
 #findIdBtn {
@@ -101,17 +107,18 @@ body {
 /* 	position: fixed; */
 	margin-top:20px;
 }
-/* #tailExplan { */
-/* 	font-size: 9px; */
-/*  	width: 430px;  */
-/*  	height: 110px;  */
-/*  	text-align: center;  */
-/*  	margin-left: 84px;  */
-/*  	margin-top: 50px;  */
-/* 	position:absolute; */
-/* 	bottom:0; */
-/* } */
-
+ #header { 
+ 	padding:16px; 
+ 	margin-top:20px; 
+ 	background-color: #ffffff;
+ } 
+ 
+.danawaImg{ /*다나와 이미지 */
+	float:left;	
+	width:128px;
+	height:28px;
+	margin-left:70px;
+}
 .clear {
     clear: both;
 }

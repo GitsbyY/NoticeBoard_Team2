@@ -334,7 +334,92 @@
 	function clearInput(inputId) {
 		document.getElementById(inputId).value = ""; // 인풋 클리어
 	}
+	
+	// 아이디 입력 필드와 관련된 코드
+	const userIdInput = document.getElementById("UserJoinId");
+	const userIdDeleteButton = document.querySelector(".joinId .btnDel");
 
+	userIdInput.addEventListener("input", () => {
+	    if (userIdInput.value.trim() !== "") {
+	        userIdDeleteButton.style.display = "block";
+	    } else {
+	        userIdDeleteButton.style.display = "none";
+	    }
+	});
+	
+	// 비밀번호 입력 필드와 관련된 코드
+	const userPwdInput = document.getElementById("UserJoinPwd");
+	const userPwdDeleteButton = document.querySelector(".joinPwd .btnDel");
+
+	userPwdInput.addEventListener("input", () => {
+	    if (userPwdInput.value.trim() !== "") {
+	        userPwdDeleteButton.style.display = "block";
+	    } else {
+	        userPwdDeleteButton.style.display = "none";
+	    }
+	});
+	
+	// 비밀번호확인 입력 필드와 관련된 코드
+	const userPwdConInput = document.getElementById("UserJoinPwdConfim");
+	const userPwdConDeleteButton = document.querySelector(".joinPwdConfirm .btnDel");
+
+	userPwdConInput.addEventListener("input", () => {
+	    if (userPwdConInput.value.trim() !== "") {
+	        userPwdConDeleteButton.style.display = "block";
+	    } else {
+	        userPwdConDeleteButton.style.display = "none";
+	    }
+	});
+
+	// 주소 입력 필드와 관련된 코드
+	const userEmailInput = document.getElementById("UserJoinEmail");
+	const userEmailDeleteButton = document.querySelector(".joinEmail .btnDel");
+
+	userEmailInput.addEventListener("input", () => {
+	    if (userEmailInput.value.trim() !== "") {
+	    	userEmailDeleteButton.style.display = "block";
+	    } else {
+	    	userEmailDeleteButton.style.display = "none";
+	    }
+	});
+
+	// 이름 입력 필드와 관련된 코드
+	const userNameInput = document.getElementById("UserJoinUserName");
+	const userNameDeleteButton = document.querySelector(".joinUserName .btnDel");
+
+	userNameInput.addEventListener("input", () => {
+	    if (userNameInput.value.trim() !== "") {
+	    	userNameDeleteButton.style.display = "block";
+	    } else {
+	    	userNameDeleteButton.style.display = "none";
+	    }
+	});
+
+	// 번호 입력 필드와 관련된 코드
+	const userPhonNInput = document.getElementById("UserPhoneNum");
+	const userPhonNDeleteButton = document.querySelector(".joinPhoneNum .btnDel");
+
+	userPhonNInput.addEventListener("input", () => {
+	    if (userPhonNInput.value.trim() !== "") {
+	    	userPhonNDeleteButton.style.display = "block";
+	    } else {
+	    	userPhonNDeleteButton.style.display = "none";
+	    }
+	});
+
+	// 닉네임 입력 필드와 관련된 코드
+	const userNnameInput = document.getElementById("joinUserNickname");
+	const userNnameDeleteButton = document.querySelector(".joinNickname .btnDel");
+
+	userNnameInput.addEventListener("input", () => {
+	    if (userNnameInput.value.trim() !== "") {
+	    	userNnameDeleteButton.style.display = "block";
+	    } else {
+	    	userNnameDeleteButton.style.display = "none";
+	    }
+	});
+	
+	
 	function selectAllFnc() {
 		if (document.getElementById("allTerms").checked == true) { //id 를 사용하여 하나의 객체만을 호출
 			for (var i = 0; i < 4; i++)

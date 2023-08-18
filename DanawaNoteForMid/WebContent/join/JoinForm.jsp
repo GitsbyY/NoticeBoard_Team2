@@ -79,26 +79,31 @@
 								<input type='checkbox' id='allTerms' name='terms'
 									value='selectAll' onclick='selectAllFnc()' /> <label
 									for="allTerms">약관 모두 동의하기</label>
+									<p class="termsHide"></p>
 							</div>
 							<div class="termsCheckbox">
 								<input type='checkbox' name='terms' value='age' id='ageCheckbox' />
-								<label for="ageCheckbox">만 14세 이상입니다. <strong>(필수)</strong></label>
+								<label for="ageCheckbox" style="margin-top: 5px;">만 14세 이상입니다. 
+									<strong>(필수)</strong></label>
+								<p class="termsHide"></p>
 							</div>
 							<div class="termsCheckbox">
 								<input type='checkbox' name='terms' value='useService'
 									id='useServiceCheckbox' /> <label for="useServiceCheckbox"
 									class="termsButtonLabel"> 서비스 이용 약관 <strong>(필수)</strong>
 								</label>
-								<button type="button" class="termsHide"
-									onclick="shapeChangeFnc()">내용보기</button>
+								<p class="termsHide">내용보기</p>
+<!-- 								<button type="button" class="termsHide" -->
+<!-- 									onclick="shapeChangeFnc()">내용보기</button> -->
 							</div>
 							<div class="termsCheckbox">
 								<input type='checkbox' name='terms' value='privateInfoCollect'
 									id='privateInfoCheckbox' /> <label for="privateInfoCheckbox"
 									class="termsButtonLabel"> 개인정보 수집 및 이용 <strong>(필수)</strong>
 								</label>
-								<button type="button" class="termsHide"
-									onclick="shapeChangeFnc()">내용보기</button>
+								<p class="termsHide">내용보기</p>
+<!-- 								<button type="button" class="termsHide" -->
+<!-- 									onclick="shapeChangeFnc()">내용보기</button> -->
 							</div>
 						</div>
 
@@ -287,7 +292,8 @@
 									for="allMarketingTerms"> 마케팅 활용 및 광고성 정보 수신 동의<span>(선택)</span>
 								</label>
 								<!-- 					내용보기 -->
-								<button type="button" class="termsHide">내용보기</button>
+								<p class="termsHide" style="margin-left: 100px;">내용보기</p>
+<!-- 								<button type="button" class="termsHide">내용보기</button> -->
 								<br>
 							</div>
 							<!-- 					이메일 sms 선택div -->
@@ -308,11 +314,12 @@
 						<button type="submit" id="danawaUserJoinIn" class="buttonJoin"
 							disabled="disabled">회원가입</button>
 					</div>
-				</div>
-				<p style="text-align: center; margin-top: 100px;">
+					<p style="text-align: center; margin-top: 100px; margin-bottom: 50px;">
 					Copyright © <strong>connectwave</strong> Co., Ltd. All Rights
 					Reserved.
-				</p>
+					</p>
+				</div>
+				
 			</form>
 
 		</div>

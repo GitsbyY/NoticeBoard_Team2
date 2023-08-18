@@ -70,11 +70,12 @@
 		min-height: auto;
 		background-color: #fff;
 		margin: auto;
+		height: auto;
 	}
 	
 	.userJoinForm {
 		width: 600px;
-		height: 1779px;
+		height: inherit;
 		display: block;
 		margin: auto;
 	}
@@ -172,6 +173,9 @@
 	
 	.termsCheckbox {
 		font-size: 12px;
+		display: flex;
+  		justify-content: space-between;
+  		align-items: center;
 	}
 	
 	.termsWrap label {
@@ -190,10 +194,12 @@
 		margin-right: 5px; /* 원하는 간격 값으로 조정 */
 	}
 	
-	.termsButtonLabel button .termsHide {
+/* 	.termsButtonLabel button  */
+	
+	.termsHide {
 		align-self: flex-end;
 		vertical-align: middle;
-		margin-left: 300px;
+		margin-left: auto;
 	}
 	
 	.inputLabel, .inputWithButton label {

@@ -16,13 +16,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import spms.dao.MemberDao;
 import spms.dto.MemberDto;
 
 
-@WebServlet("/join/join")
-public class UserJoinServlet extends HttpServlet{
+@WebServlet("/join/check")
+public class CheckId extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -41,8 +42,10 @@ public class UserJoinServlet extends HttpServlet{
 			
 			
 			RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/join/JoinForm.jsp");
-			
+				request.getRequestDispatcher("/join/idCheck.jsp");
+			// 서블릿에서 세션에 메시지를 저장
+            HttpSession session = request.getSession();
+            session.setAttribute("duplicateMessage", null); // 초기화
 			// �씤�겢猷⑤뵫
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
@@ -66,25 +69,13 @@ public class UserJoinServlet extends HttpServlet{
 
 			Connection conn = null;
 			
-			
+		    // 업데이트된 부분: 아이디 중복 결과 메시지를 세션에 저장
+	        HttpSession session = req.getSession();
 			// �엯�젰 留ㅺ컻蹂��닔�쓽 媛� 媛��졇�삤湲�
 			//�븘�씠�뵒 鍮꾨�踰덊샇 �씠硫붿씪 �씠由� �룿踰덊샇 �땳�꽕�엫
 			String id = req.getParameter("userId");
-			String pwd = req.getParameter("userPwd");
-			String email = req.getParameter("email");
-			String name = req.getParameter("userName");
-			String mobile = req.getParameter("phoneNum");
-			String nickName = req.getParameter("nickName");
+		
 			try {
-				
-				MemberDto memberDto = new MemberDto();
-				
-				memberDto.setUserId(id);
-				memberDto.setUserPwd(pwd);
-				memberDto.setUserEmail(email);
-				memberDto.setUserName(name);
-				memberDto.setUserPhone(mobile);
-				memberDto.setUserNickname(nickName);
 				
 				ServletContext sc = this.getServletContext();
 				
@@ -93,10 +84,16 @@ public class UserJoinServlet extends HttpServlet{
 				MemberDao memberDao = new MemberDao();
 				
 				memberDao.setConnection(conn);
-			    
-				int resultNum = memberDao.MemberInsert(memberDto);
 				
-				res.sendRedirect("../login/loginForm");
+				// 중복된 아이디 검사
+			    if (memberDao.isDuplicatedId(id)) {
+			        // 중복된 아이디 처리 로직
+			    	 session.setAttribute("duplicateMessage", "이미 존재하는 아이디입니다.");
+			        return;
+			    } else {
+	                session.setAttribute("duplicateMessage", "사용가능한 아이디입니다.");
+	            }
+				res.sendRedirect("../join/idCheck.jsp");
 
 			}catch (Exception e) {
 				// TODO Auto-generated catch block

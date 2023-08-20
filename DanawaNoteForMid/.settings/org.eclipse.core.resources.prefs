@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//src/spms/dao/MemberDao.java=UTF-8
+encoding//src/spms/servlets/CheckId.java=UTF-8
 encoding//src/spms/servlets/UserJoinServlet.java=UTF-8

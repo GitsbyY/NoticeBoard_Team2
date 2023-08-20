@@ -17,71 +17,14 @@ public class MemberDao {
 	public void setConnection(Connection conn) {
 		this.connection = conn;
 	}
-	
-	public List<MemberDto> selectList() throws Exception{
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		try {
-			String sql = "SELECT USER_NO, USER_NAME, USER_EMAIL, USER_CRE_DATE";
-			sql += " FROM USER_INFO";
-//			sql += " ORDER BY USER_NO DESC";
-			
-			pstmt = connection.prepareStatement(sql);
-			
-			rs = pstmt.executeQuery();
-			
-			ArrayList<MemberDto> memberList = new ArrayList<MemberDto>();
-			
-			int userNo = 0;
-			String userName = "";
-			String userEmail = "";
-			Date userCreateDate = null;
-			
-			while (rs.next()) {
-				userNo = rs.getInt("USER_NO");
-				userName = rs.getString("USER_NAME");
-				userEmail = rs.getString("USER_EMAIL");
-				userCreateDate = rs.getDate("USER_CRE_DATE");
-				
-				MemberDto memberDto = new MemberDto(userNo, userName, userEmail,  userCreateDate);
-				
-				memberList.add(memberDto);
-				
-			}
-			
-			return memberList;
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw e;
-		}finally {
-			if(rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		
-	} // 회원목록 끝
-	
-	// 회원등록
+
 	public int MemberInsert(MemberDto memberDto) throws Exception{
 		int resultNum = 0;
 		
 		PreparedStatement pstmt = null;
 		
 		try {
-			//아이디/비밀번호/이메일/이름/휴대폰번호/닉네임
+			//�븘�씠�뵒/鍮꾨�踰덊샇/�씠硫붿씪/�씠由�/�쑕���룿踰덊샇/�땳�꽕�엫
 			String id = memberDto.getUserId();
 			String pwd = memberDto.getUserPwd();
 			String email = memberDto.getUserEmail();
@@ -118,150 +61,71 @@ public class MemberDao {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-			} //if 종료
+			} //if 醫낅즺
 		}
 		
 		return resultNum;
 	}
 	
-	
-//	회원삭제
-	public int MemberDelete(int no) throws SQLException{
-		int result = 0;
+	public boolean isDuplicatedId(String userId)
+			throws SQLException{
 		
-		PreparedStatement pstmt = null;
-		
-		String sql = "";
-		sql = "DELETE FROM USER_INFO";
-		sql += " WHERE USER_NO = ?";
-		
-		try {
-			pstmt = connection.prepareStatement(sql);
-			
-			pstmt.setInt(1, no);
-			
-			result = pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw e;
-		}finally {
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		
-		
-		return result;
-	}
-	
-	public MemberDto MemberSelectOne(int no) throws Exception{
-		MemberDto memberDto = null;
-				
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String sql = "";
-		
-		sql = "SELECT USER_NAME, USER_EMAIL, USER_CRE_DATE";
+		sql += "SELECT COUNT(*)";
 		sql += " FROM USER_INFO";
-		sql += " WHERE USER_NO = ?";
+		sql += " WHERE USER_ID = ?";
 		
 		try {
-			pstmt = connection.prepareStatement(sql);
 			
-			pstmt.setInt(1, no);
+			pstmt = connection.prepareStatement(sql);
+
+			pstmt.setString(1, userId);
+			
 			
 			rs = pstmt.executeQuery();
 			
-			String mName = "";
-			String email = "";
-			Date creDate = null;
-			
-			if (rs.next()) {
-				mName = rs.getString("USER_NAME");
-				email = rs.getString("USER_EMAIL");
-				creDate = rs.getDate("USER_CRE_DATE");
-				
-				memberDto = new MemberDto();
-				
-				
-				memberDto.setUserNo(no);;
-				memberDto.setUserName(mName);
-				memberDto.setUserEmail(email);
-				memberDto.setUserCreateDate(creDate);
-				
-			}else {
-				throw new Exception("해당 번호의 회원을 찾을 수 없습니다");
+			if(rs.next()) {
+				 int count = rs.getInt(1);
+	             return count > 0; // 중복되는 아이디가 있으면 true 반환
 			}
-			
+		
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}finally {
-			if(rs != null) {
-				try {
+			try {
+				if (rs != null) {
 					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
 				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
+			try {
+				if(pstmt != null) {
+				pstmt.close();
 				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				if(connection != null) {
+				connection.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			
-		} //finally end
-		
-		return memberDto;
+		} // finally 醫낅즺
+		return false;
 	}
 	
-	
-	public int memberUpdate(MemberDto memberDto) throws Exception{
-		int result = 0;
-		
-		PreparedStatement pstmt = null;
-		
-		String sql = "";
-		
-		sql = "UPDATE USER_INFO";
-		sql += " SET  USER_EMAIL = ?,  USER_NAME = ?,  USER_MOD_DATE = SYSDATE";
-		sql += " WHERE  USER_NO = ?";
-		
-		try {
-			pstmt = connection.prepareStatement(sql);
-			
-			pstmt.setString(1, memberDto.getUserEmail());
-			pstmt.setString(2, memberDto.getUserName());
-			pstmt.setInt(3, memberDto.getUserNo());
-			
-			result = pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-			throw e;
-		}finally {
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		} // finally 종료
-		
-		
-		return result;
-		
-	}
 	public MemberDto memberExist(String userId, String userPwd)
 			throws SQLException{
 		
@@ -321,7 +185,7 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 			
-		} // finally 종료
+		} // finally 醫낅즺
 		
 		return null;
 	}

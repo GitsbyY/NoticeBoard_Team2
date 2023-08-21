@@ -59,9 +59,9 @@ public class CheckId extends HttpServlet{
 			dispatcher.forward(request, response);
 		}
 		
-	} // doGet 硫붿꽌�뱶 �걹
+	} // doGet
 	
-	// �뜲�씠�꽣踰좎씠�뒪�뿉 �뜲�씠�꽣 異붽�, �쉶�썝�젙蹂� ���옣
+	
 		@Override
 		protected void doPost(HttpServletRequest req
 			, HttpServletResponse res)
@@ -71,8 +71,7 @@ public class CheckId extends HttpServlet{
 			
 		    // 업데이트된 부분: 아이디 중복 결과 메시지를 세션에 저장
 	        HttpSession session = req.getSession();
-			// �엯�젰 留ㅺ컻蹂��닔�쓽 媛� 媛��졇�삤湲�
-			//�븘�씠�뵒 鍮꾨�踰덊샇 �씠硫붿씪 �씠由� �룿踰덊샇 �땳�꽕�엫
+		
 			String id = req.getParameter("userId");
 		
 			try {

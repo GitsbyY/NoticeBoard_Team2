@@ -24,7 +24,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			//�븘�씠�뵒/鍮꾨�踰덊샇/�씠硫붿씪/�씠由�/�쑕���룿踰덊샇/�땳�꽕�엫
+			
 			String id = memberDto.getUserId();
 			String pwd = memberDto.getUserPwd();
 			String email = memberDto.getUserEmail();
@@ -122,7 +122,7 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 			
-		} // finally 醫낅즺
+		} // finally 
 		return false;
 	}
 	
@@ -185,7 +185,7 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 			
-		} // finally 醫낅즺
+		} // finally 
 		
 		return null;
 	}
